@@ -2,130 +2,1160 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>SCFHS Prometric Exam Q1–Q100</title>
+<title>SCFHS Prometric Test Q1–Q20</title>
 <style>
 body { font-family: Arial, sans-serif; margin: 20px; }
-.quiz-container { max-width: 900px; margin: auto; }
-.question { margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
-.answers label { display: block; margin: 5px 0; cursor: pointer; }
-button { padding: 10px 15px; font-size: 16px; }
-#heatmap { display: flex; flex-wrap: wrap; margin-top: 20px; }
-.heat { width: 30px; height: 30px; margin: 2px; background: #eee; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 4px; font-size: 12px; position: relative; }
-.heat.correct { background: #8f8; }
-.heat.incorrect { background: #f88; }
-.tooltip { visibility: hidden; width: 200px; background-color: #333; color: #fff; text-align: left; padding: 5px; border-radius: 5px; position: absolute; z-index: 1; top: 35px; left: 50%; transform: translateX(-50%); }
-.heat:hover .tooltip { visibility: visible; }
+.question { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+.answers label { display: block; margin: 5px 0; }
+#submitBtn { padding: 10px 20px; font-size: 16px; }
+#heatmap { margin-top: 20px; }
+.heat { display: inline-block; width: 30px; height: 30px; line-height: 30px; text-align: center; margin: 2px; border-radius: 5px; background: #ddd; cursor: pointer; position: relative; }
+.heat.correct { background: #4CAF50; color: #fff; }
+.heat.incorrect { background: #F44336; color: #fff; }
+.tooltip { display: none; position: absolute; top: 35px; left: 0; background: #333; color: #fff; padding: 5px; border-radius: 3px; font-size: 12px; width: 200px; z-index: 10; }
+.heat:hover .tooltip { display: block; }
 </style>
 </head>
 <body>
-<div class="quiz-container">
-<h1>SCFHS Prometric Test</h1>
-<label for="studentName">Enter Name/ID:</label>
-<input type="text" id="studentName" placeholder="Name or ID" style="margin-bottom:20px; width: 300px; padding:5px;">
 
-<form id="quizForm">
+<h1>SCFHS Prometric Test (Q1–Q20)</h1>
 
-<!-- ================= Questions Q1–Q100 ================= -->
+<!-- Questions 1–20 -->
+<div id="questions">
 
-<!-- Example format for Q1–Q100: answers randomized A–D, correct answer data-correct="true" -->
-<!-- Q21 -->
+<div class="question" id="q1">
+<p>Q1. A 65-year-old patient presents with acute shortness of breath and SpO₂ 82%. Which is the priority nursing intervention?</p>
+<div class="answers">
+<label><input type="radio" name="q1" data-correct="true"> Administer oxygen via mask</label>
+<label><input type="radio" name="q1"> Start IV fluids</label>
+<label><input type="radio" name="q1"> Obtain blood sample</label>
+<label><input type="radio" name="q1"> Call dietary</label>
+</div>
+</div>
+
+<div class="question" id="q2">
+<p>Q2. Postoperative patient with hypotension and tachycardia. What is first action?</p>
+<div class="answers">
+<label><input type="radio" name="q2"> Call physician</label>
+<label><input type="radio" name="q2" data-correct="true"> Place patient supine</label>
+<label><input type="radio" name="q2"> Administer pain meds</label>
+<label><input type="radio" name="q2"> Take vital signs later</label>
+</div>
+</div>
+
+<div class="question" id="q3">
+<p>Q3. A patient receiving IV fluids develops crackles and SpO₂ 88%. Nursing priority?</p>
+<div class="answers">
+<label><input type="radio" name="q3" data-correct="true"> Stop IV and elevate head</label>
+<label><input type="radio" name="q3"> Increase IV rate</label>
+<label><input type="radio" name="q3"> Give diuretic orally later</label>
+<label><input type="radio" name="q3"> Assess bowel sounds</label>
+</div>
+</div>
+
+<div class="question" id="q4">
+<p>Q4. Patient shows confusion, sweating, and BG 45 mg/dL. First action?</p>
+<div class="answers">
+<label><input type="radio" name="q4"> Check urine output</label>
+<label><input type="radio" name="q4" data-correct="true"> Administer rapid-acting glucose</label>
+<label><input type="radio" name="q4"> Call dietary</label>
+<label><input type="radio" name="q4"> Start IV antibiotics</label>
+</div>
+</div>
+
+<div class="question" id="q5">
+<p>Q5. Unresponsive patient with no pulse. First step?</p>
+<div class="answers">
+<label><input type="radio" name="q5"> Check blood sugar</label>
+<label><input type="radio" name="q5"> Administer oxygen</label>
+<label><input type="radio" name="q5" data-correct="true"> Start CPR</label>
+<label><input type="radio" name="q5"> Call dietary</label>
+</div>
+</div>
+
+<!-- Example randomization pattern for next 15 questions -->
+<div class="question" id="q6">
+<p>Q6. A patient has dysphagia and NG feeding. Most essential nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q6" data-correct="true"> Keep HOB ≥30° during feeding</label>
+<label><input type="radio" name="q6"> Flush NG tube every 8 hrs</label>
+<label><input type="radio" name="q6"> Administer feeding rapidly</label>
+<label><input type="radio" name="q6"> Lie patient flat</label>
+</div>
+</div>
+
+<div class="question" id="q7">
+<p>Q7. ICU patient with respiratory distress needs ABG. Which artery is most commonly used?</p>
+<div class="answers">
+<label><input type="radio" name="q7"> Brachial</label>
+<label><input type="radio" name="q7" data-correct="true"> Radial</label>
+<label><input type="radio" name="q7"> Femoral</label>
+<label><input type="radio" name="q7"> Carotid</label>
+</div>
+</div>
+
+<div class="question" id="q8">
+<p>Q8. 45-year-old requires ABG. Best nurse action?</p>
+<div class="answers">
+<label><input type="radio" name="q8"> Warm the site</label>
+<label><input type="radio" name="q8"> Use large bore needle</label>
+<label><input type="radio" name="q8" data-correct="true"> Perform Allen test before radial puncture</label>
+<label><input type="radio" name="q8"> Take supine</label>
+</div>
+</div>
+
+<div class="question" id="q9">
+<p>Q9. 56-year-old post-op colostomy. Expected early finding?</p>
+<div class="answers">
+<label><input type="radio" name="q9"> Black stoma</label>
+<label><input type="radio" name="q9" data-correct="true"> Pink, moist stoma</label>
+<label><input type="radio" name="q9"> Swollen with necrosis</label>
+<label><input type="radio" name="q9"> Bleeding around stoma</label>
+</div>
+</div>
+
+<div class="question" id="q10">
+<p>Q10. 58-year-old ICU patient with respiratory distress. Best initial action?</p>
+<div class="answers">
+<label><input type="radio" name="q10" data-correct="true"> Assess airway and breathing</label>
+<label><input type="radio" name="q10"> Start antibiotics</label>
+<label><input type="radio" name="q10"> Check urine output</label>
+<label><input type="radio" name="q10"> Take blood sugar</label>
+</div>
+</div>
+
+<!-- Questions 11–20 (same pattern) -->
+<div class="question" id="q11">
+<p>Q11. Patient on continuous enteral feeding. Which action prevents aspiration?</p>
+<div class="answers">
+<label><input type="radio" name="q11" data-correct="true"> Elevate HOB 30–45° during feeding</label>
+<label><input type="radio" name="q11"> Feed rapidly while supine</label>
+<label><input type="radio" name="q11"> Clamp NG tube often</label>
+<label><input type="radio" name="q11"> Give cold bolus</label>
+</div>
+</div>
+
+<div class="question" id="q12">
+<p>Q12. 70-year-old with chest pain and hypotension. First nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q12"> Give IV fluids fast</label>
+<label><input type="radio" name="q12" data-correct="true"> Assess airway, breathing, circulation</label>
+<label><input type="radio" name="q12"> Call dietary</label>
+<label><input type="radio" name="q12"> Administer pain meds</label>
+</div>
+</div>
+
+<div class="question" id="q13">
+<p>Q13. Patient shows hypoglycemia and confusion. Immediate intervention?</p>
+<div class="answers">
+<label><input type="radio" name="q13"> Give insulin</label>
+<label><input type="radio" name="q13" data-correct="true"> Administer glucose</label>
+<label><input type="radio" name="q13"> Call physician later</label>
+<label><input type="radio" name="q13"> Monitor for 1 hr</label>
+</div>
+</div>
+
+<div class="question" id="q14">
+<p>Q14. Post-op patient with wound bleeding. First action?</p>
+<div class="answers">
+<label><input type="radio" name="q14" data-correct="true"> Apply pressure to wound</label>
+<label><input type="radio" name="q14"> Notify dietary</label>
+<label><input type="radio" name="q14"> Change bed linens</label>
+<label><input type="radio" name="q14"> Elevate legs</label>
+</div>
+</div>
+
+<div class="question" id="q15">
+<p>Q15. 60-year-old with chest pain, diaphoresis, and low BP. What is priority?</p>
+<div class="answers">
+<label><input type="radio" name="q15" data-correct="true"> Assess airway, breathing, circulation</label>
+<label><input type="radio" name="q15"> Give acetaminophen</label>
+<label><input type="radio" name="q15"> Start NG tube</label>
+<label><input type="radio" name="q15"> Encourage ambulation</label>
+</div>
+</div>
+
+<div class="question" id="q16">
+<p>Q16. Patient with altered mental status. Most urgent nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q16" data-correct="true"> Ensure airway patency</label>
+<label><input type="radio" name="q16"> Obtain dietary history</label>
+<label><input type="radio" name="q16"> Assess bowel sounds</label>
+<label><input type="radio" name="q16"> Take weight</label>
+</div>
+</div>
+
+<div class="question" id="q17">
+<p>Q17. Patient develops sudden SOB and wheezing. What first?</p>
+<div class="answers">
+<label><input type="radio" name="q17" data-correct="true"> Administer prescribed bronchodilator</label>
+<label><input type="radio" name="q17"> Give oral antibiotic</label>
+<label><input type="radio" name="q17"> Elevate legs</label>
+<label><input type="radio" name="q17"> Start IV fluids</label>
+</div>
+</div>
+
+<div class="question" id="q18">
+<p>Q18. ICU patient SpO₂ drops to 85% on oxygen. First action?</p>
+<div class="answers">
+<label><input type="radio" name="q18" data-correct="true"> Check airway, reposition, increase O₂</label>
+<label><input type="radio" name="q18"> Call dietary</label>
+<label><input type="radio" name="q18"> Draw ABG later</label>
+<label><input type="radio" name="q18"> Administer insulin</label>
+</div>
+</div>
+
+<div class="question" id="q19">
+<p>Q19. Patient with post-op nausea. Most appropriate nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q19" data-correct="true"> Administer antiemetic as prescribed</label>
+<label><input type="radio" name="q19"> Encourage early ambulation immediately</label>
+<label><input type="radio" name="q19"> Give high-fat snack</label>
+<label><input type="radio" name="q19"> Elevate legs flat</label>
+</div>
+</div>
+
+<div class="question" id="q20">
+<p>Q20. 55-year-old with sudden chest pain and diaphoresis. First nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q20" data-correct="true"> Assess ABCs and vitals</label>
+<label><input type="radio" name="q20"> Call dietary</label>
+<label><input type="radio" name="q20"> Administer IV fluids only</label>
+<label><input type="radio" name="q20"> Take temperature</label>
+</div>
+</div>
 <div class="question" id="q21">
-<p>21. A patient presents with sudden-onset chest pain radiating to the jaw. Which action is priority?</p>
+<p>Q21. A 72-year-old patient on anticoagulants presents with sudden hematuria. Priority action?</p>
 <div class="answers">
-<label><input type="radio" name="q21" value="A"> Give sublingual nitroglycerin</label>
-<label><input type="radio" name="q21" value="B" data-correct="true"> Call code and prepare for ECG</label>
-<label><input type="radio" name="q21" value="C"> Administer morphine</label>
-<label><input type="radio" name="q21" value="D"> Reassure and monitor</label>
+<label><input type="radio" name="q21" data-correct="true"> Assess hemodynamic status and notify physician</label>
+<label><input type="radio" name="q21"> Encourage oral fluids only</label>
+<label><input type="radio" name="q21"> Apply heating pad</label>
+<label><input type="radio" name="q21"> Administer pain medication</label>
 </div>
 </div>
 
-<!-- Q22 -->
 <div class="question" id="q22">
-<p>22. A post-op patient has a temperature of 39°C and purulent wound drainage. Most appropriate intervention?</p>
+<p>Q22. Post-op patient has a BP of 88/60 mmHg and HR 120 bpm. First nursing action?</p>
 <div class="answers">
-<label><input type="radio" name="q22" value="A" data-correct="true"> Notify the physician and obtain cultures</label>
-<label><input type="radio" name="q22" value="B"> Apply cold compress</label>
-<label><input type="radio" name="q22" value="C"> Administer acetaminophen only</label>
-<label><input type="radio" name="q22" value="D"> Encourage ambulation</label>
+<label><input type="radio" name="q22" data-correct="true"> Place patient supine and elevate legs</label>
+<label><input type="radio" name="q22"> Give high-protein snack</label>
+<label><input type="radio" name="q22"> Take temperature</label>
+<label><input type="radio" name="q22"> Call dietary</label>
 </div>
 </div>
 
-<!-- Q23 -->
 <div class="question" id="q23">
-<p>23. A patient with COPD shows increased dyspnea and wheezing. Which action is immediate?</p>
+<p>Q23. A patient with COPD shows increased work of breathing and O₂ sat 85%. Nursing priority?</p>
 <div class="answers">
-<label><input type="radio" name="q23" value="A" data-correct="true"> Administer prescribed bronchodilator</label>
-<label><input type="radio" name="q23" value="B"> Encourage deep breathing exercises</label>
-<label><input type="radio" name="q23" value="C"> Call respiratory therapy after 30 mins</label>
-<label><input type="radio" name="q23" value="D"> Place patient supine</label>
+<label><input type="radio" name="q23" data-correct="true"> Administer prescribed oxygen and position upright</label>
+<label><input type="radio" name="q23"> Encourage ambulation</label>
+<label><input type="radio" name="q23"> Start IV fluids</label>
+<label><input type="radio" name="q23"> Apply cold compress</label>
 </div>
 </div>
 
-<!-- Q24 -->
 <div class="question" id="q24">
-<p>24. A diabetic patient has BG 50 mg/dL with confusion. Best immediate action?</p>
+<p>Q24. A patient post-MI complains of chest pain radiating to left arm. First nursing action?</p>
 <div class="answers">
-<label><input type="radio" name="q24" value="A" data-correct="true"> Administer fast-acting glucose orally if conscious</label>
-<label><input type="radio" name="q24" value="B"> Wait 10 minutes and recheck</label>
-<label><input type="radio" name="q24" value="C"> Call physician only</label>
-<label><input type="radio" name="q24" value="D"> Provide high-fiber snack</label>
+<label><input type="radio" name="q24" data-correct="true"> Assess vital signs and administer oxygen</label>
+<label><input type="radio" name="q24"> Give acetaminophen</label>
+<label><input type="radio" name="q24"> Encourage deep breathing exercises</label>
+<label><input type="radio" name="q24"> Call dietary</label>
 </div>
 </div>
 
-<!-- Q25 -->
 <div class="question" id="q25">
-<p>25. A patient develops sudden shortness of breath post blood transfusion. First action?</p>
+<p>Q25. Patient on continuous NG feeding develops nausea and vomiting. What is priority?</p>
 <div class="answers">
-<label><input type="radio" name="q25" value="A" data-correct="true"> Stop the transfusion immediately</label>
-<label><input type="radio" name="q25" value="B"> Administer antihistamine</label>
-<label><input type="radio" name="q25" value="C"> Encourage deep breathing</label>
-<label><input type="radio" name="q25" value="D"> Document and continue</label>
+<label><input type="radio" name="q25" data-correct="true"> Stop feeding and elevate HOB</label>
+<label><input type="radio" name="q25"> Continue feeding slowly</label>
+<label><input type="radio" name="q25"> Administer antiemetic after 2 hours</label>
+<label><input type="radio" name="q25"> Lie patient flat</label>
 </div>
 </div>
 
-<!-- Continue Q26–Q100 similarly with randomized letters and correct answers set -->
+<div class="question" id="q26">
+<p>Q26. 68-year-old with suspected stroke, slurred speech and right-sided weakness. First nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q26" data-correct="true"> Call rapid response/stroke team immediately</label>
+<label><input type="radio" name="q26"> Start IV fluids</label>
+<label><input type="radio" name="q26"> Give aspirin</label>
+<label><input type="radio" name="q26"> Obtain dietary history</label>
+</div>
+</div>
 
-<button type="button" onclick="submitQuiz()">Submit</button>
-</form>
+<div class="question" id="q27">
+<p>Q27. Patient with hypoglycemia (BG 38 mg/dL) and confusion. Priority intervention?</p>
+<div class="answers">
+<label><input type="radio" name="q27"> Recheck in 30 min</label>
+<label><input type="radio" name="q27" data-correct="true"> Give fast-acting glucose immediately</label>
+<label><input type="radio" name="q27"> Call dietary</label>
+<label><input type="radio" name="q27"> Assess for pain</label>
+</div>
+</div>
 
-<!-- ================= HEATMAP ================= -->
+<div class="question" id="q28">
+<p>Q28. Patient post-op with sudden drop in SpO₂ to 82%. Nursing priority?</p>
+<div class="answers">
+<label><input type="radio" name="q28" data-correct="true"> Check airway, increase O₂, reposition</label>
+<label><input type="radio" name="q28"> Start IV antibiotics</label>
+<label><input type="radio" name="q28"> Call dietary</label>
+<label><input type="radio" name="q28"> Assess urine output</label>
+</div>
+</div>
+
+<div class="question" id="q29">
+<p>Q29. ICU patient develops acute shortness of breath with crackles. What is priority?</p>
+<div class="answers">
+<label><input type="radio" name="q29" data-correct="true"> Stop IV fluids and elevate HOB</label>
+<label><input type="radio" name="q29"> Give IV antibiotics</label>
+<label><input type="radio" name="q29"> Encourage ambulation</label>
+<label><input type="radio" name="q29"> Apply cold compress</label>
+</div>
+</div>
+
+<div class="question" id="q30">
+<p>Q30. Post-op patient shows hypotension and tachycardia. First intervention?</p>
+<div class="answers">
+<label><input type="radio" name="q30" data-correct="true"> Place patient supine and assess ABCs</label>
+<label><input type="radio" name="q30"> Give oral fluids</label>
+<label><input type="radio" name="q30"> Apply heating pad</label>
+<label><input type="radio" name="q30"> Take dietary history</label>
+</div>
+</div>
+
+<div class="question" id="q31">
+<p>Q31. Patient with NG tube feeding shows abdominal distention. Priority nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q31" data-correct="true"> Hold feeding and assess for intolerance</label>
+<label><input type="radio" name="q31"> Increase feeding rate</label>
+<label><input type="radio" name="q31"> Encourage ambulation immediately</label>
+<label><input type="radio" name="q31"> Lie patient flat</label>
+</div>
+</div>
+
+<div class="question" id="q32">
+<p>Q32. Patient with suspected pulmonary embolism. First nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q32" data-correct="true"> Assess airway, breathing, and oxygenation</label>
+<label><input type="radio" name="q32"> Start IV fluids only</label>
+<label><input type="radio" name="q32"> Encourage ambulation</label>
+<label><input type="radio" name="q32"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q33">
+<p>Q33. Patient post-op with new-onset confusion and agitation. Nursing priority?</p>
+<div class="answers">
+<label><input type="radio" name="q33" data-correct="true"> Assess airway, breathing, circulation, safety</label>
+<label><input type="radio" name="q33"> Give oral fluids</label>
+<label><input type="radio" name="q33"> Call dietary</label>
+<label><input type="radio" name="q33"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q34">
+<p>Q34. Patient has chest tube draining 500 mL sanguineous fluid in 1 hour. First action?</p>
+<div class="answers">
+<label><input type="radio" name="q34" data-correct="true"> Notify physician immediately</label>
+<label><input type="radio" name="q34"> Clamp tube</label>
+<label><input type="radio" name="q34"> Encourage ambulation</label>
+<label><input type="radio" name="q34"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q35">
+<p>Q35. Patient post-op develops sudden SOB and low SpO₂. Nursing priority?</p>
+<div class="answers">
+<label><input type="radio" name="q35" data-correct="true"> Administer O₂ and call rapid response</label>
+<label><input type="radio" name="q35"> Encourage ambulation</label>
+<label><input type="radio" name="q35"> Take dietary history</label>
+<label><input type="radio" name="q35"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q36">
+<p>Q36. Patient with post-op hypotension and tachycardia. Most urgent intervention?</p>
+<div class="answers">
+<label><input type="radio" name="q36" data-correct="true"> Place supine and elevate legs; assess ABCs</label>
+<label><input type="radio" name="q36"> Give oral fluids</label>
+<label><input type="radio" name="q36"> Apply heating pad</label>
+<label><input type="radio" name="q36"> Call dietary</label>
+</div>
+</div>
+
+<div class="question" id="q37">
+<p>Q37. Patient with hypoglycemia shows confusion. Nursing priority?</p>
+<div class="answers">
+<label><input type="radio" name="q37" data-correct="true"> Administer rapid-acting glucose</label>
+<label><input type="radio" name="q37"> Recheck in 30 min</label>
+<label><input type="radio" name="q37"> Call dietary</label>
+<label><input type="radio" name="q37"> Take vitals later</label>
+</div>
+</div>
+
+<div class="question" id="q38">
+<p>Q38. Patient post-op develops crackles and low SpO₂. What is priority?</p>
+<div class="answers">
+<label><input type="radio" name="q38" data-correct="true"> Stop IV fluids and elevate HOB</label>
+<label><input type="radio" name="q38"> Give oral fluids</label>
+<label><input type="radio" name="q38"> Call dietary</label>
+<label><input type="radio" name="q38"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q39">
+<p>Q39. Patient post-op with hypotension. Most urgent action?</p>
+<div class="answers">
+<label><input type="radio" name="q39" data-correct="true"> Place supine and elevate legs</label>
+<label><input type="radio" name="q39"> Give oral fluids</label>
+<label><input type="radio" name="q39"> Call dietary</label>
+<label><input type="radio" name="q39"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q40">
+<p>Q40. Patient with NG feeding and nausea. Nursing priority?</p>
+<div class="answers">
+<label><input type="radio" name="q40" data-correct="true"> Stop feeding and elevate HOB</label>
+<label><input type="radio" name="q40"> Continue feeding slowly</label>
+<label><input type="radio" name="q40"> Give antiemetic after 2 hours</label>
+<label><input type="radio" name="q40"> Lie patient flat</label>
+</div>
+</div>
+
+<div class="question" id="q41">
+<p>Q41. Patient post-stroke with slurred speech and weakness. First nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q41" data-correct="true"> Call stroke team immediately</label>
+<label><input type="radio" name="q41"> Start IV fluids</label>
+<label><input type="radio" name="q41"> Administer aspirin</label>
+<label><input type="radio" name="q41"> Take dietary history</label>
+</div>
+</div>
+
+<div class="question" id="q42">
+<p>Q42. Patient with acute chest pain, diaphoresis, low BP. Priority action?</p>
+<div class="answers">
+<label><input type="radio" name="q42" data-correct="true"> Assess ABCs and administer oxygen</label>
+<label><input type="radio" name="q42"> Give acetaminophen</label>
+<label><input type="radio" name="q42"> Start NG tube</label>
+<label><input type="radio" name="q42"> Encourage ambulation</label>
+</div>
+</div>
+
+<div class="question" id="q43">
+<p>Q43. ICU patient SpO₂ drops suddenly. First nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q43" data-correct="true"> Check airway, reposition, increase O₂</label>
+<label><input type="radio" name="q43"> Call dietary</label>
+<label><input type="radio" name="q43"> Draw ABG later</label>
+<label><input type="radio" name="q43"> Administer insulin</label>
+</div>
+</div>
+
+<div class="question" id="q44">
+<p>Q44. Patient post-op with new confusion and agitation. Priority?</p>
+<div class="answers">
+<label><input type="radio" name="q44" data-correct="true"> Assess ABCs and safety</label>
+<label><input type="radio" name="q44"> Give oral fluids</label>
+<label><input type="radio" name="q44"> Call dietary</label>
+<label><input type="radio" name="q44"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q45">
+<p>Q45. Patient post-op bleeding from wound. First action?</p>
+<div class="answers">
+<label><input type="radio" name="q45" data-correct="true"> Apply direct pressure and notify physician</label>
+<label><input type="radio" name="q45"> Call dietary</label>
+<label><input type="radio" name="q45"> Change linens</label>
+<label><input type="radio" name="q45"> Elevate legs</label>
+</div>
+</div>
+
+<div class="question" id="q46">
+<p>Q46. Patient with NG feeding develops abdominal distention. Action?</p>
+<div class="answers">
+<label><input type="radio" name="q46" data-correct="true"> Hold feeding and assess for intolerance</label>
+<label><input type="radio" name="q46"> Increase rate</label>
+<label><input type="radio" name="q46"> Encourage ambulation</label>
+<label><input type="radio" name="q46"> Lie flat</label>
+</div>
+</div>
+
+<div class="question" id="q47">
+<p>Q47. Post-op patient suddenly becomes hypotensive. Nursing priority?</p>
+<div class="answers">
+<label><input type="radio" name="q47" data-correct="true"> Place supine, elevate legs, assess ABCs</label>
+<label><input type="radio" name="q47"> Give oral fluids</label>
+<label><input type="radio" name="q47"> Apply heating pad</label>
+<label><input type="radio" name="q47"> Call dietary</label>
+</div>
+</div>
+
+<div class="question" id="q48">
+<p>Q48. Patient develops sudden wheezing. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q48" data-correct="true"> Administer bronchodilator as prescribed</label>
+<label><input type="radio" name="q48"> Encourage ambulation</label>
+<label><input type="radio" name="q48"> Give oral antibiotics</label>
+<label><input type="radio" name="q48"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q49">
+<p>Q49. Patient post-op shows hypoglycemia with neuro signs. Priority?</p>
+<div class="answers">
+<label><input type="radio" name="q49" data-correct="true"> Administer fast-acting glucose</label>
+<label><input type="radio" name="q49"> Recheck later</label>
+<label><input type="radio" name="q49"> Call dietary</label>
+<label><input type="radio" name="q49"> Take vitals later</label>
+</div>
+</div>
+
+<div class="question" id="q50">
+<p>Q50. Patient post-op with sudden SOB and low SpO₂. First action?</p>
+<div class="answers">
+<label><input type="radio" name="q50" data-correct="true"> Administer O₂ and call rapid response</label>
+<label><input type="radio" name="q50"> Encourage ambulation</label>
+<label><input type="radio" name="q50"> Take dietary history</label>
+<label><input type="radio" name="q50"> Apply heating pad</label>
+</div>
+</div>
+Perfect! Let’s continue with Q51–Q75 fully synchronized:
+
+Randomized answers (A–D)
+
+Specific rationale per case
+
+Heatmap numbers linked to rationales
+
+<!-- Questions 51–75 -->
+<div class="question" id="q51">
+<p>Q51. Patient post-op day 1 with fever 39°C, HR 110, surgical site redness. First action?</p>
+<div class="answers">
+<label><input type="radio" name="q51" data-correct="true"> Notify physician and collect cultures</label>
+<label><input type="radio" name="q51"> Give antipyretic only</label>
+<label><input type="radio" name="q51"> Encourage ambulation</label>
+<label><input type="radio" name="q51"> Apply cold compress</label>
+</div>
+</div>
+
+<div class="question" id="q52">
+<p>Q52. Patient with acute chest pain and ST elevation. Priority nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q52" data-correct="true"> Administer oxygen and prepare for reperfusion therapy</label>
+<label><input type="radio" name="q52"> Give acetaminophen</label>
+<label><input type="radio" name="q52"> Encourage ambulation</label>
+<label><input type="radio" name="q52"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q53">
+<p>Q53. Patient with NG tube develops sudden abdominal distention and vomiting. Nursing priority?</p>
+<div class="answers">
+<label><input type="radio" name="q53" data-correct="true"> Stop feeding and assess for bowel obstruction</label>
+<label><input type="radio" name="q53"> Continue feeding at slower rate</label>
+<label><input type="radio" name="q53"> Apply cold compress</label>
+<label><input type="radio" name="q53"> Give antiemetic after 2 hours</label>
+</div>
+</div>
+
+<div class="question" id="q54">
+<p>Q54. Patient with suspected sepsis. BP 88/50, HR 125, temp 38.5°C. First nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q54" data-correct="true"> Initiate IV fluids and notify physician immediately</label>
+<label><input type="radio" name="q54"> Encourage oral fluids</label>
+<label><input type="radio" name="q54"> Take dietary history</label>
+<label><input type="radio" name="q54"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q55">
+<p>Q55. Patient with COPD has sudden increase in wheezing and low SpO₂. Priority?</p>
+<div class="answers">
+<label><input type="radio" name="q55" data-correct="true"> Administer prescribed bronchodilator and oxygen</label>
+<label><input type="radio" name="q55"> Encourage deep breathing exercises</label>
+<label><input type="radio" name="q55"> Give oral antibiotics</label>
+<label><input type="radio" name="q55"> Call dietary</label>
+</div>
+</div>
+
+<div class="question" id="q56">
+<p>Q56. Post-op patient develops hypotension and tachycardia. Nursing priority?</p>
+<div class="answers">
+<label><input type="radio" name="q56" data-correct="true"> Place supine, elevate legs, assess ABCs</label>
+<label><input type="radio" name="q56"> Give oral fluids</label>
+<label><input type="radio" name="q56"> Apply heating pad</label>
+<label><input type="radio" name="q56"> Call dietary</label>
+</div>
+</div>
+
+<div class="question" id="q57">
+<p>Q57. Patient with BG 40 mg/dL, confused. Immediate nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q57" data-correct="true"> Give rapid-acting glucose</label>
+<label><input type="radio" name="q57"> Recheck in 30 min</label>
+<label><input type="radio" name="q57"> Call dietary</label>
+<label><input type="radio" name="q57"> Assess pain</label>
+</div>
+</div>
+
+<div class="question" id="q58">
+<p>Q58. Patient with chest tube draining 600 mL sanguineous fluid in 1 hour. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q58" data-correct="true"> Notify physician immediately</label>
+<label><input type="radio" name="q58"> Clamp tube</label>
+<label><input type="radio" name="q58"> Encourage ambulation</label>
+<label><input type="radio" name="q58"> Apply cold compress</label>
+</div>
+</div>
+
+<div class="question" id="q59">
+<p>Q59. Patient post-op with sudden dyspnea and SpO₂ 82%. Priority?</p>
+<div class="answers">
+<label><input type="radio" name="q59" data-correct="true"> Administer oxygen and call rapid response</label>
+<label><input type="radio" name="q59"> Encourage ambulation</label>
+<label><input type="radio" name="q59"> Take dietary history</label>
+<label><input type="radio" name="q59"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q60">
+<p>Q60. Post-op patient with fever 38.8°C and surgical site erythema. Nursing priority?</p>
+<div class="answers">
+<label><input type="radio" name="q60" data-correct="true"> Notify physician and collect cultures</label>
+<label><input type="radio" name="q60"> Give antipyretic only</label>
+<label><input type="radio" name="q60"> Encourage ambulation</label>
+<label><input type="radio" name="q60"> Apply cold compress</label>
+</div>
+</div>
+
+<div class="question" id="q61">
+<p>Q61. Patient with NG feeding develops vomiting. Nursing priority?</p>
+<div class="answers">
+<label><input type="radio" name="q61" data-correct="true"> Stop feeding, elevate HOB, assess for intolerance</label>
+<label><input type="radio" name="q61"> Continue at slower rate</label>
+<label><input type="radio" name="q61"> Give antiemetic after 2 hours</label>
+<label><input type="radio" name="q61"> Lie patient flat</label>
+</div>
+</div>
+
+<div class="question" id="q62">
+<p>Q62. Patient post-MI develops chest pain with diaphoresis. Priority?</p>
+<div class="answers">
+<label><input type="radio" name="q62" data-correct="true"> Assess ABCs and administer oxygen</label>
+<label><input type="radio" name="q62"> Give acetaminophen</label>
+<label><input type="radio" name="q62"> Encourage ambulation</label>
+<label><input type="radio" name="q62"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q63">
+<p>Q63. Patient post-op develops sudden hypotension. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q63" data-correct="true"> Place supine, elevate legs, assess ABCs</label>
+<label><input type="radio" name="q63"> Give oral fluids</label>
+<label><input type="radio" name="q63"> Apply heating pad</label>
+<label><input type="radio" name="q63"> Call dietary</label>
+</div>
+</div>
+
+<div class="question" id="q64">
+<p>Q64. Patient with suspected pulmonary embolism. Nursing priority?</p>
+<div class="answers">
+<label><input type="radio" name="q64" data-correct="true"> Assess airway, breathing, oxygenation, notify physician</label>
+<label><input type="radio" name="q64"> Start IV fluids only</label>
+<label><input type="radio" name="q64"> Encourage ambulation</label>
+<label><input type="radio" name="q64"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q65">
+<p>Q65. Patient post-op day 2 develops sudden confusion. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q65" data-correct="true"> Assess ABCs and ensure safety</label>
+<label><input type="radio" name="q65"> Give oral fluids</label>
+<label><input type="radio" name="q65"> Call dietary</label>
+<label><input type="radio" name="q65"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q66">
+<p>Q66. Patient post-op bleeding at wound site. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q66" data-correct="true"> Apply direct pressure and notify physician</label>
+<label><input type="radio" name="q66"> Change linens</label>
+<label><input type="radio" name="q66"> Elevate legs</label>
+<label><input type="radio" name="q66"> Call dietary</label>
+</div>
+</div>
+
+<div class="question" id="q67">
+<p>Q67. NG tube feeding patient develops abdominal distention. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q67" data-correct="true"> Hold feeding and assess tolerance</label>
+<label><input type="radio" name="q67"> Increase rate</label>
+<label><input type="radio" name="q67"> Encourage ambulation</label>
+<label><input type="radio" name="q67"> Lie patient flat</label>
+</div>
+</div>
+
+<div class="question" id="q68">
+<p>Q68. Patient post-op hypotension. Nursing priority?</p>
+<div class="answers">
+<label><input type="radio" name="q68" data-correct="true"> Supine position, elevate legs, assess ABCs</label>
+<label><input type="radio" name="q68"> Give oral fluids</label>
+<label><input type="radio" name="q68"> Apply heating pad</label>
+<label><input type="radio" name="q68"> Call dietary</label>
+</div>
+</div>
+
+<div class="question" id="q69">
+<p>Q69. Patient with sudden wheezing. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q69" data-correct="true"> Administer prescribed bronchodilator</label>
+<label><input type="radio" name="q69"> Encourage ambulation</label>
+<label><input type="radio" name="q69"> Give oral antibiotics</label>
+<label><input type="radio" name="q69"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q70">
+<p>Q70. Hypoglycemia with confusion. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q70" data-correct="true"> Administer fast-acting glucose</label>
+<label><input type="radio" name="q70"> Recheck later</label>
+<label><input type="radio" name="q70"> Call dietary</label>
+<label><input type="radio" name="q70"> Take vitals later</label>
+</div>
+</div>
+
+<div class="question" id="q71">
+<p>Q71. Post-op patient develops SOB and SpO₂ 83%. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q71" data-correct="true"> Administer O₂ and call rapid response</label>
+<label><input type="radio" name="q71"> Encourage ambulation</label>
+<label><input type="radio" name="q71"> Take dietary history</label>
+<label><input type="radio" name="q71"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q72">
+<p>Q72. Patient post-op day 2 with fever, HR 115, wound redness. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q72" data-correct="true"> Notify physician and collect cultures</label>
+<label><input type="radio" name="q72"> Give antipyretic only</label>
+<label><input type="radio" name="q72"> Encourage ambulation</label>
+<label><input type="radio" name="q72"> Apply cold compress</label>
+</div>
+</div>
+
+<div class="question" id="q73">
+<p>Q73. NG feeding patient with vomiting. Nursing priority?</p>
+<div class="answers">
+<label><input type="radio" name="q73" data-correct="true"> Stop feeding, elevate HOB, assess for intolerance</label>
+<label><input type="radio" name="q73"> Continue at slower rate</label>
+<label><input type="radio" name="q73"> Give antiemetic after 2 hours</label>
+<label><input type="radio" name="q73"> Lie patient flat</label>
+</div>
+</div>
+
+<div class="question" id="q74">
+<p>Q74. Patient post-MI with chest pain and diaphoresis. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q74" data-correct="true"> Assess ABCs and administer oxygen</label>
+<label><input type="radio" name="q74"> Give acetaminophen</label>
+<label><input type="radio" name="q74"> Encourage ambulation</label>
+<label><input type="radio" name="q74"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q75">
+<p>Q75. Patient post-op develops sudden hypotension. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q75" data-correct="true"> Supine, elevate legs, assess ABCs</label>
+<label><input type="radio" name="q75"> Give oral fluids</label>
+<label><input type="radio" name="q75"> Apply heating pad</label>
+<label><input type="radio" name="q75"> Call dietary</label>
+</div>
+</div>
+<div class="question" id="q76">
+<p>Q76. Patient post-op day 1 with sudden shortness of breath, HR 130, SpO₂ 84%. Nursing priority?</p>
+<div class="answers">
+<label><input type="radio" name="q76" data-correct="true"> Administer oxygen and call rapid response team</label>
+<label><input type="radio" name="q76"> Encourage deep breathing exercises</label>
+<label><input type="radio" name="q76"> Give oral fluids</label>
+<label><input type="radio" name="q76"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q77">
+<p>Q77. Post-op patient has sudden hypotension, cold clammy skin. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q77" data-correct="true"> Place supine, elevate legs, assess ABCs</label>
+<label><input type="radio" name="q77"> Give oral fluids</label>
+<label><input type="radio" name="q77"> Call dietary</label>
+<label><input type="radio" name="q77"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q78">
+<p>Q78. Patient with NG tube develops abdominal distention and vomiting. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q78" data-correct="true"> Stop feeding, assess for bowel obstruction, elevate HOB</label>
+<label><input type="radio" name="q78"> Continue feeding at slower rate</label>
+<label><input type="radio" name="q78"> Give antiemetic immediately</label>
+<label><input type="radio" name="q78"> Lay patient flat</label>
+</div>
+</div>
+
+<div class="question" id="q79">
+<p>Q79. Post-op patient develops fever 38.9°C, wound redness, purulent drainage. Priority?</p>
+<div class="answers">
+<label><input type="radio" name="q79" data-correct="true"> Notify physician and obtain wound culture</label>
+<label><input type="radio" name="q79"> Give antipyretic only</label>
+<label><input type="radio" name="q79"> Encourage ambulation</label>
+<label><input type="radio" name="q79"> Apply cold compress</label>
+</div>
+</div>
+
+<div class="question" id="q80">
+<p>Q80. Patient with chest pain, ST elevation, diaphoresis. Nursing priority?</p>
+<div class="answers">
+<label><input type="radio" name="q80" data-correct="true"> Assess ABCs, administer oxygen, prepare for reperfusion</label>
+<label><input type="radio" name="q80"> Give acetaminophen</label>
+<label><input type="radio" name="q80"> Encourage ambulation</label>
+<label><input type="radio" name="q80"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q81">
+<p>Q81. Patient post-op day 2 with sudden confusion, agitation. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q81" data-correct="true"> Assess ABCs, ensure safety, notify physician</label>
+<label><input type="radio" name="q81"> Give oral fluids</label>
+<label><input type="radio" name="q81"> Apply heating pad</label>
+<label><input type="radio" name="q81"> Call dietary</label>
+</div>
+</div>
+
+<div class="question" id="q82">
+<p>Q82. Post-op patient develops large chest tube output 700 mL/hr. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q82" data-correct="true"> Notify physician immediately and monitor vital signs closely</label>
+<label><input type="radio" name="q82"> Clamp chest tube</label>
+<label><input type="radio" name="q82"> Encourage ambulation</label>
+<label><input type="radio" name="q82"> Apply cold compress</label>
+</div>
+</div>
+
+<div class="question" id="q83">
+<p>Q83. Patient with hypoglycemia 38 mg/dL, confusion. Immediate nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q83" data-correct="true"> Administer rapid-acting glucose and recheck</label>
+<label><input type="radio" name="q83"> Wait and recheck in 30 minutes</label>
+<label><input type="radio" name="q83"> Call dietary</label>
+<label><input type="radio" name="q83"> Take vitals later</label>
+</div>
+</div>
+
+<div class="question" id="q84">
+<p>Q84. Patient post-op develops sudden dyspnea, O₂ sat 82%, crackles present. Priority?</p>
+<div class="answers">
+<label><input type="radio" name="q84" data-correct="true"> Elevate HOB, administer oxygen, notify physician</label>
+<label><input type="radio" name="q84"> Encourage ambulation</label>
+<label><input type="radio" name="q84"> Take dietary history</label>
+<label><input type="radio" name="q84"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q85">
+<p>Q85. Post-op patient with hypotension, tachycardia. Nursing priority?</p>
+<div class="answers">
+<label><input type="radio" name="q85" data-correct="true"> Place supine, elevate legs, monitor ABCs</label>
+<label><input type="radio" name="q85"> Give oral fluids</label>
+<label><input type="radio" name="q85"> Call dietary</label>
+<label><input type="radio" name="q85"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q86">
+<p>Q86. NG tube feeding patient develops vomiting and abdominal distention. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q86" data-correct="true"> Stop feeding, assess tolerance, notify physician</label>
+<label><input type="radio" name="q86"> Continue at slower rate</label>
+<label><input type="radio" name="q86"> Give antiemetic after 2 hours</label>
+<label><input type="radio" name="q86"> Lay patient flat</label>
+</div>
+</div>
+
+<div class="question" id="q87">
+<p>Q87. Post-op patient develops fever 39°C, surgical site erythema, purulent drainage. Priority?</p>
+<div class="answers">
+<label><input type="radio" name="q87" data-correct="true"> Notify physician and collect wound culture</label>
+<label><input type="radio" name="q87"> Give antipyretic only</label>
+<label><input type="radio" name="q87"> Encourage ambulation</label>
+<label><input type="radio" name="q87"> Apply cold compress</label>
+</div>
+</div>
+
+<div class="question" id="q88">
+<p>Q88. Patient with chest pain post-MI, diaphoresis, ST elevation. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q88" data-correct="true"> Administer oxygen, monitor ABCs, prepare for reperfusion</label>
+<label><input type="radio" name="q88"> Give acetaminophen</label>
+<label><input type="radio" name="q88"> Encourage ambulation</label>
+<label><input type="radio" name="q88"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q89">
+<p>Q89. Patient post-op sudden confusion and agitation. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q89" data-correct="true"> Assess ABCs, ensure safety, notify physician</label>
+<label><input type="radio" name="q89"> Give oral fluids</label>
+<label><input type="radio" name="q89"> Apply heating pad</label>
+<label><input type="radio" name="q89"> Call dietary</label>
+</div>
+</div>
+
+<div class="question" id="q90">
+<p>Q90. Patient with NG tube feeding vomiting. Nursing priority?</p>
+<div class="answers">
+<label><input type="radio" name="q90" data-correct="true"> Stop feeding, elevate HOB, assess tolerance</label>
+<label><input type="radio" name="q90"> Continue at slower rate</label>
+<label><input type="radio" name="q90"> Give antiemetic after 2 hours</label>
+<label><input type="radio" name="q90"> Lay patient flat</label>
+</div>
+</div>
+
+<div class="question" id="q91">
+<p>Q91. Patient post-op develops hypotension and tachycardia. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q91" data-correct="true"> Place supine, elevate legs, assess ABCs</label>
+<label><input type="radio" name="q91"> Give oral fluids</label>
+<label><input type="radio" name="q91"> Apply heating pad</label>
+<label><input type="radio" name="q91"> Call dietary</label>
+</div>
+</div>
+
+<div class="question" id="q92">
+<p>Q92. Post-op patient develops sudden SOB, SpO₂ 80%. Priority?</p>
+<div class="answers">
+<label><input type="radio" name="q92" data-correct="true"> Administer oxygen and call rapid response</label>
+<label><input type="radio" name="q92"> Encourage ambulation</label>
+<label><input type="radio" name="q92"> Take dietary history</label>
+<label><input type="radio" name="q92"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q93">
+<p>Q93. Patient with chest tube large drainage 650 mL/hr. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q93" data-correct="true"> Notify physician immediately</label>
+<label><input type="radio" name="q93"> Clamp tube</label>
+<label><input type="radio" name="q93"> Encourage ambulation</label>
+<label><input type="radio" name="q93"> Apply cold compress</label>
+</div>
+</div>
+
+<div class="question" id="q94">
+<p>Q94. Patient with hypoglycemia 35 mg/dL, confusion. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q94" data-correct="true"> Administer rapid glucose</label>
+<label><input type="radio" name="q94"> Recheck in 30 min</label>
+<label><input type="radio" name="q94"> Call dietary</label>
+<label><input type="radio" name="q94"> Take vitals later</label>
+</div>
+</div>
+
+<div class="question" id="q95">
+<p>Q95. Patient post-op develops fever, wound redness, purulent drainage. Priority?</p>
+<div class="answers">
+<label><input type="radio" name="q95" data-correct="true"> Notify physician and obtain wound culture</label>
+<label><input type="radio" name="q95"> Give antipyretic only</label>
+<label><input type="radio" name="q95"> Encourage ambulation</label>
+<label><input type="radio" name="q95"> Apply cold compress</label>
+</div>
+</div>
+
+<div class="question" id="q96">
+<p>Q96. Post-op patient with sudden hypotension, tachycardia. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q96" data-correct="true"> Place supine, elevate legs, monitor ABCs</label>
+<label><input type="radio" name="q96"> Give oral fluids</label>
+<label><input type="radio" name="q96"> Apply heating pad</label>
+<label><input type="radio" name="q96"> Call dietary</label>
+</div>
+</div>
+
+<div class="question" id="q97">
+<p>Q97. NG feeding patient develops abdominal distention and vomiting. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q97" data-correct="true"> Stop feeding, assess tolerance, elevate HOB</label>
+<label><input type="radio" name="q97"> Continue feeding slowly</label>
+<label><input type="radio" name="q97"> Give antiemetic after 2 hours</label>
+<label><input type="radio" name="q97"> Lay patient flat</label>
+</div>
+</div>
+
+<div class="question" id="q98">
+<p>Q98. Patient post-MI develops chest pain, diaphoresis. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q98" data-correct="true"> Administer oxygen, monitor ABCs, notify physician</label>
+<label><input type="radio" name="q98"> Give acetaminophen</label>
+<label><input type="radio" name="q98"> Encourage ambulation</label>
+<label><input type="radio" name="q98"> Apply heating pad</label>
+</div>
+</div>
+
+<div class="question" id="q99">
+<p>Q99. Post-op patient sudden confusion. Nursing action?</p>
+<div class="answers">
+<label><input type="radio" name="q99" data-correct="true"> Assess ABCs, ensure safety, notify physician</label>
+<label><input type="radio" name="q99"> Give oral fluids</label>
+<label><input type="radio" name="q99"> Apply heating pad</label>
+<label><input type="radio" name="q99"> Call dietary</label>
+</div>
+</div>
+
+<div class="question" id="q100">
+<p>Q100. Post-op patient develops SOB, SpO₂ 81%. Nursing priority?</p>
+<div class="answers">
+<label><input type="radio" name="q100" data-correct="true"> Administer oxygen and call rapid response</label>
+<label><input type="radio" name="q100"> Encourage ambulation</label>
+<label><input type="radio" name="q100"> Take dietary history</label>
+<label><input type="radio" name="q100"> Apply heating pad</label>
+</div>
+</div>
+  
+</div>
+
+<button id="submitBtn">Submit</button>
+
+<!-- Heatmap -->
 <div id="heatmap">
-<!-- Example heatmap Q1–Q25 -->
-<div class="heat" data-tip="Q21 Rationale: Sudden chest pain suggests acute coronary syndrome; priority is ECG and code activation.">21<span class="tooltip">Q21 Rationale: Sudden chest pain suggests acute coronary syndrome; priority is ECG and code activation.</span></div>
-<div class="heat" data-tip="Q22 Rationale: Fever and purulent drainage indicate infection; notify physician and obtain cultures immediately.">22<span class="tooltip">Q22 Rationale: Fever and purulent drainage indicate infection; notify physician and obtain cultures immediately.</span></div>
-<div class="heat" data-tip="Q23 Rationale: Increased dyspnea and wheezing in COPD needs bronchodilator promptly.">23<span class="tooltip">Q23 Rationale: Increased dyspnea and wheezing in COPD needs bronchodilator promptly.</span></div>
-<div class="heat" data-tip="Q24 Rationale: Hypoglycemia with neuro symptoms requires immediate fast-acting glucose if patient is conscious.">24<span class="tooltip">Q24 Rationale: Hypoglycemia with neuro symptoms requires immediate fast-acting glucose if patient is conscious.</span></div>
-<div class="heat" data-tip="Q25 Rationale: Acute transfusion reaction; stop transfusion immediately to prevent complications.">25<span class="tooltip">Q25 Rationale: Acute transfusion reaction; stop transfusion immediately to prevent complications.</span></div>
+  <!-- Example: Q1–Q20 -->
+  <div class="heat" data-tip="Q1 Rationale: Patient shows hypoxia. Oxygen is priority.">1<span class="tooltip">Q1 Rationale: Patient shows hypoxia. Oxygen is priority.</span></div>
+  <div class="heat" data-tip="Q2 Rationale: Post-op hypotension. Supine optimizes perfusion.">2<span class="tooltip">Q2 Rationale: Post-op hypotension. Supine optimizes perfusion.</span></div>
+  <div class="heat" data-tip="Q3 Rationale: Crackles and low SpO₂. Stop IV & elevate head.">3<span class="tooltip">Q3 Rationale: Crackles and low SpO₂. Stop IV & elevate head.</span></div>
+  <div class="heat" data-tip="Q4 Rationale: Hypoglycemia with neuro signs. Give glucose immediately.">4<span class="tooltip">Q4 Rationale: Hypoglycemia with neuro signs. Give glucose immediately.</span></div>
+  <div class="heat" data-tip="Q5 Rationale: Unresponsive with no pulse. CPR first.">5<span class="tooltip">Q5 Rationale: Unresponsive with no pulse. CPR first.</span></div>
+  <div class="heat" data-tip="Q6 Rationale: Dysphagia & NG feeding. Elevate HOB ≥30°.">6<span class="tooltip">Q6 Rationale: Dysphagia & NG feeding. Elevate HOB ≥30°.</span></div>
+  <div class="heat" data-tip="Q7 Rationale: Radial artery preferred for ABG due to accessibility & safety.">7<span class="tooltip">Q7 Rationale: Radial artery preferred for ABG due to accessibility & safety.</span></div>
+  <div class="heat" data-tip="Q8 Rationale: Allen test ensures collateral circulation before radial puncture.">8<span class="tooltip">Q8 Rationale: Allen test ensures collateral circulation before radial puncture.</span></div>
+  <div class="heat" data-tip="Q9 Rationale: Normal stoma is pink, moist.">9<span class="tooltip">Q9 Rationale: Normal stoma is pink, moist.</span></div>
+  <div class="heat" data-tip="Q10 Rationale: Airway & breathing priority in respiratory distress.">10<span class="tooltip">Q10 Rationale: Airway & breathing priority in respiratory distress.</span></div>
+  <div class="heat" data-tip="Q11 Rationale: Elevate HOB to prevent aspiration.">11<span class="tooltip">Q11 Rationale: Elevate HOB to prevent aspiration.</span></div>
+  <div class="heat" data-tip="Q12 Rationale: ABC assessment before interventions.">12<span class="tooltip">Q12 Rationale: ABC assessment before interventions.</span></div>
+  <div class="heat" data-tip="Q13 Rationale: Glucose given immediately for hypoglycemia.">13<span class="tooltip">Q13 Rationale: Glucose given immediately for hypoglycemia.</span></div>
+  <div class="heat" data-tip="Q14 Rationale: Apply pressure for active bleeding.">14<span class="tooltip">Q14 Rationale: Apply pressure for active bleeding.</span></div>
+  <div class="heat" data-tip="Q15 Rationale: ABCs priority in chest pain with hypotension.">15<span class="tooltip">Q15 Rationale: ABCs priority in chest pain with hypotension.</span></div>
+  <div class="heat" data-tip="Q16 Rationale: Ensure airway in altered mental status.">16<span class="tooltip">Q16 Rationale: Ensure airway in altered mental status.</span></div>
+  <div class="heat" data-tip="Q17 Rationale: Bronchodilator for sudden wheezing.">17<span class="tooltip">Q17 Rationale: Bronchodilator for sudden wheezing.</span></div>
+  <div class="heat" data-tip="Q18 Rationale: Check airway & increase O₂ in desaturation.">18<span class="tooltip">Q18 Rationale: Check airway & increase O₂ in desaturation.</span></div>
+  <div class="heat" data-tip="Q19 Rationale: Antiemetic for post-op nausea.">19<span class="tooltip">Q19 Rationale: Antiemetic for post-op nausea.</span></div>
+  <div class="heat" data-tip="Q20 Rationale: ABCs first in sudden chest pain & diaphoresis.">20<span class="tooltip">Q20 Rationale: ABCs first in sudden chest pain & diaphoresis.</span></div>
+ <div class="heat" data-tip="Q21 Rationale: Sudden hematuria in anticoagulated patient. Assess ABCs & notify physician.">21<span class="tooltip">Q21 Rationale: Sudden hematuria in anticoagulated patient. Assess ABCs & notify physician.</span></div>
+  <div class="heat" data-tip="Q22 Rationale: Post-op hypotension and tachycardia. Supine + legs elevate perfusion.">22<span class="tooltip">Q22 Rationale: Post-op hypotension and tachycardia. Supine + legs elevate perfusion.</span></div>
+  <div class="heat" data-tip="Q23 Rationale: COPD with hypoxia. Oxygen & upright position priority.">23<span class="tooltip">Q23 Rationale: COPD with hypoxia. Oxygen & upright position priority.</span></div>
+  <div class="heat" data-tip="Q24 Rationale: Post-MI chest pain. ABCs and O₂ first.">24<span class="tooltip">Q24 Rationale: Post-MI chest pain. ABCs and O₂ first.</span></div>
+  <div class="heat" data-tip="Q25 Rationale: NG feeding with nausea. Stop feeding, elevate HOB.">25<span class="tooltip">Q25 Rationale: NG feeding with nausea. Stop feeding, elevate HOB.</span></div>
+  <div class="heat" data-tip="Q26 Rationale: Suspected stroke. Rapid response activation critical.">26<span class="tooltip">Q26 Rationale: Suspected stroke. Rapid response activation critical.</span></div>
+  <div class="heat" data-tip="Q27 Rationale: Hypoglycemia with confusion. Fast-acting glucose immediate.">27<span class="tooltip">Q27 Rationale: Hypoglycemia with confusion. Fast-acting glucose immediate.</span></div>
+  <div class="heat" data-tip="Q28 Rationale: Post-op hypoxia. Check airway, reposition, oxygen.">28<span class="tooltip">Q28 Rationale: Post-op hypoxia. Check airway, reposition, oxygen.</span></div>
+  <div class="heat" data-tip="Q29 Rationale: Acute SOB, crackles, low SpO₂. Stop IV, elevate HOB.">29<span class="tooltip">Q29 Rationale: Acute SOB, crackles, low SpO₂. Stop IV, elevate HOB.</span></div>
+  <div class="heat" data-tip="Q30 Rationale: Post-op hypotension. Supine + legs elevate perfusion first.">30<span class="tooltip">Q30 Rationale: Post-op hypotension. Supine + legs elevate perfusion first.</span></div>
+  <div class="heat" data-tip="Q31 Rationale: NG distention. Hold feeding, assess intolerance.">31<span class="tooltip">Q31 Rationale: NG distention. Hold feeding, assess intolerance.</span></div>
+  <div class="heat" data-tip="Q32 Rationale: Suspected PE. Airway and oxygen priority.">32<span class="tooltip">Q32 Rationale: Suspected PE. Airway and oxygen priority.</span></div>
+  <div class="heat" data-tip="Q33 Rationale: New confusion post-op. Assess ABCs and safety.">33<span class="tooltip">Q33 Rationale: New confusion post-op. Assess ABCs and safety.</span></div>
+  <div class="heat" data-tip="Q34 Rationale: Chest tube draining large volume. Notify physician.">34<span class="tooltip">Q34 Rationale: Chest tube draining large volume. Notify physician.</span></div>
+  <div class="heat" data-tip="Q35 Rationale: Post-op SOB. Oxygen and rapid response.">35<span class="tooltip">Q35 Rationale: Post-op SOB. Oxygen and rapid response.</span></div>
+  <div class="heat" data-tip="Q36 Rationale: Hypotension post-op. Supine + legs elevate perfusion.">36<span class="tooltip">Q36 Rationale: Hypotension post-op. Supine + legs elevate perfusion.</span></div>
+  <div class="heat" data-tip="Q37 Rationale: Hypoglycemia. Rapid glucose first.">37<span class="tooltip">Q37 Rationale: Hypoglycemia. Rapid glucose first.</span></div>
+  <div class="heat" data-tip="Q38 Rationale: Crackles & low SpO₂. Stop IV, elevate HOB.">38<span class="tooltip">Q38 Rationale: Crackles & low SpO₂. Stop IV, elevate HOB.</span></div>
+  <div class="heat" data-tip="Q39 Rationale: Post-op hypotension. Supine + legs elevate perfusion.">39<span class="tooltip">Q39 Rationale: Post-op hypotension. Supine + legs elevate perfusion.</span></div>
+  <div class="heat" data-tip="Q40 Rationale: NG nausea. Stop feeding, elevate HOB.">40<span class="tooltip">Q40 Rationale: NG nausea. Stop feeding, elevate HOB.</span></div>
+  <div class="heat" data-tip="Q41 Rationale: Stroke with slurred speech. Rapid activation of stroke team.">41<span class="tooltip">Q41 Rationale: Stroke with slurred speech. Rapid activation of stroke team.</span></div>
+  <div class="heat" data-tip="Q42 Rationale: Chest pain & hypotension. Assess ABCs, give oxygen.">42<span class="tooltip">Q42 Rationale: Chest pain & hypotension. Assess ABCs, give oxygen.</span></div>
+  <div class="heat" data-tip="Q43 Rationale: Sudden hypoxia. Check airway, reposition, give O₂.">43<span class="tooltip">Q43 Rationale: Sudden hypoxia. Check airway, reposition, give O₂.</span></div>
+  <div class="heat" data-tip="Q44 Rationale: Confusion post-op. Assess ABCs and ensure safety.">44<span class="tooltip">Q44 Rationale: Confusion post-op. Assess ABCs and ensure safety.</span></div>
+  <div class="heat" data-tip="Q45 Rationale: Post-op bleeding. Direct pressure and notify physician.">45<span class="tooltip">Q45 Rationale: Post-op bleeding. Direct pressure and notify physician.</span></div>
+  <div class="heat" data-tip="Q46 Rationale: NG distention. Hold feeding, assess tolerance.">46<span class="tooltip">Q46 Rationale: NG distention. Hold feeding, assess tolerance.</span></div>
+  <div class="heat" data-tip="Q47 Rationale: Hypotension post-op. Supine + legs elevate perfusion.">47<span class="tooltip">Q47 Rationale: Hypotension post-op. Supine + legs elevate perfusion.</span></div>
+  <div class="heat" data-tip="Q48 Rationale: Sudden wheezing. Administer prescribed bronchodilator.">48<span class="tooltip">Q48 Rationale: Sudden wheezing. Administer prescribed bronchodilator.</span></div>
+  <div class="heat" data-tip="Q49 Rationale: Hypoglycemia neuro signs. Give fast-acting glucose.">49<span class="tooltip">Q49 Rationale: Hypoglycemia neuro signs. Give fast-acting glucose.</span></div>
+  <div class="heat" data-tip="Q50 Rationale: Post-op SOB, low SpO₂. Oxygen & rapid response.">50<span class="tooltip">Q50 Rationale: Post-op SOB, low SpO₂. Oxygen & rapid response.</span></div>
+<div class="heat" data-tip="Q51 Rationale: Post-op fever & redness. Notify physician, collect cultures.">51</div>
+  <div class="heat" data-tip="Q52 Rationale: Acute STEMI. Oxygen & reperfusion prep priority.">52</div>
+  <div class="heat" data-tip="Q53 Rationale: NG vomiting & distention. Stop feeding, assess bowel obstruction.">53</div>
+  <div class="heat" data-tip="Q54 Rationale: Suspected sepsis. IV fluids & notify physician.">54</div>
+  <div class="heat" data-tip="Q55 Rationale: COPD acute wheezing. Bronchodilator & O₂.">55</div>
+  <div class="heat" data-tip="Q56 Rationale: Post-op hypotension. Supine + legs elevate perfusion.">56</div>
+  <div class="heat" data-tip="Q57 Rationale: Hypoglycemia. Give rapid glucose immediately.">57</div>
+  <div class="heat" data-tip="Q58 Rationale: Chest tube large drainage. Notify physician.">58</div>
+  <div class="heat" data-tip="Q59 Rationale: Post-op SOB, SpO₂ low. Oxygen & rapid response.">59</div>
+  <div class="heat" data-tip="Q60 Rationale: Fever & surgical site erythema. Notify physician, collect cultures.">60</div>
+  <div class="heat" data-tip="Q61 Rationale: NG vomiting. Stop feeding, elevate HOB, assess intolerance.">61</div>
+  <div class="heat" data-tip="Q62 Rationale: Chest pain post-MI. ABCs & oxygen.">62</div>
+  <div class="heat" data-tip="Q63 Rationale: Post-op hypotension. Supine + legs elevate perfusion.">63</div>
+  <div class="heat" data-tip="Q64 Rationale: Suspected PE. Assess ABCs, oxygen, notify physician.">64</div>
+  <div class="heat" data-tip="Q65 Rationale: Confusion post-op. Assess ABCs & safety.">65</div>
+  <div class="heat" data-tip="Q66 Rationale: Wound bleeding. Apply direct pressure & notify physician.">66</div>
+  <div class="heat" data-tip="Q67 Rationale: NG distention. Hold feeding & assess tolerance.">67</div>
+  <div class="heat" data-tip="Q68 Rationale: Post-op hypotension. Supine + legs elevate perfusion.">68</div>
+  <div class="heat" data-tip="Q69 Rationale: Sudden wheezing. Administer prescribed bronchodilator.">69</div>
+  <div class="heat" data-tip="Q70 Rationale: Hypoglycemia neuro signs. Give fast-acting glucose.">70</div>
+  <div class="heat" data-tip="Q71 Rationale: Post-op SOB, SpO₂ low. Oxygen & rapid response.">71</div>
+  <div class="heat" data-tip="Q72 Rationale: Post-op fever & wound redness. Notify physician & collect cultures.">72</div>
+  <div class="heat" data-tip="Q73 Rationale: NG vomiting. Stop feeding, elevate HOB, assess tolerance.">73</div>
+  <div class="heat" data-tip="Q74 Rationale: Post-MI chest pain & diaphoresis. ABCs & oxygen first.">74</div>
+  <div class="heat" data-tip="Q75 Rationale: Post-op hypotension. Supine + legs elevate perfusion.">75</div>
+ <div class="heat" data-tip="Q76 Rationale: Post-op SOB & low O₂. Oxygen & rapid response needed.">76</div>
+  <div class="heat" data-tip="Q77 Rationale: Hypotension & tachycardia. Supine + legs elevate perfusion.">77</div>
+  <div class="heat" data-tip="Q78 Rationale: NG vomiting & distention. Stop feeding, assess bowel obstruction.">78</div>
+  <div class="heat" data-tip="Q79 Rationale: Fever & purulent wound. Notify physician & collect culture.">79</div>
+  <div class="heat" data-tip="Q80 Rationale: Post-MI chest pain. ABCs & oxygen first, prepare reperfusion.">80</div>
+  <div class="heat" data-tip="Q81 Rationale: Confusion post-op. Ensure safety & notify physician.">81</div>
+  <div class="heat" data-tip="Q82 Rationale: Chest tube large output. Notify physician immediately.">82</div>
+  <div class="heat" data-tip="Q83 Rationale: Hypoglycemia with confusion. Give rapid glucose.">83</div>
+  <div class="heat" data-tip="Q84 Rationale: Post-op SOB, crackles, low SpO₂. Elevate HOB, oxygen, notify physician.">84</div>
+  <div class="heat" data-tip="Q85 Rationale: Hypotension & tachycardia. Supine + legs elevated.">85</div>
+  <div class="heat" data-tip="Q86 Rationale: NG vomiting & distention. Stop feeding, assess, notify physician.">86</div>
+  <div class="heat" data-tip="Q87 Rationale: Fever & purulent wound. Notify physician & collect culture.">87</div>
+  <div class="heat" data-tip="Q88 Rationale: Post-MI chest pain & diaphoresis. ABCs & oxygen first.">88</div>
+  <div class="heat" data-tip="Q89 Rationale: Post-op confusion. Assess ABCs, ensure safety, notify physician.">89</div>
+  <div class="heat" data-tip="Q90 Rationale: NG vomiting. Stop feeding, elevate HOB, assess tolerance.">90</div>
+  <div class="heat" data-tip="Q91 Rationale: Hypotension & tachycardia. Supine + legs elevate perfusion.">91</div>
+  <div class="heat" data-tip="Q92 Rationale: SOB & low O₂ post-op. Oxygen & rapid response needed.">92</div>
+  <div class="heat" data-tip="Q93 Rationale: Large chest tube drainage. Notify physician immediately.">93</div>
+  <div class="heat" data-tip="Q94 Rationale: Hypoglycemia. Give rapid glucose immediately.">94</div>
+  <div class="heat" data-tip="Q95 Rationale: Fever & purulent wound. Notify physician & collect culture.">95</div>
+  <div class="heat" data-tip="Q96 Rationale: Post-op hypotension. Supine + legs elevate perfusion.">96</div>
+  <div class="heat" data-tip="Q97 Rationale: NG vomiting & distention. Stop feeding, assess tolerance, elevate HOB.">97</div>
+  <div class="heat" data-tip="Q98 Rationale: Post-MI chest pain & diaphoresis. Oxygen & ABCs first.">98</div>
+  <div class="heat" data-tip="Q99 Rationale: Post-op confusion. Assess ABCs, ensure safety, notify physician.">99</div>
+  <div class="heat" data-tip="Q100 Rationale: Post-op SOB, SpO₂ 81%. Oxygen & rapid response required.">100</div>
 </div>
-
-<div id="result" style="margin-top:20px;"></div>
-
 <script>
-function submitQuiz() {
-  const form = document.getElementById('quizForm');
-  const name = document.getElementById('studentName').value || 'Unknown';
+document.getElementById('submitBtn').addEventListener('click', function(){
+  let questions = document.querySelectorAll('.question');
+  let heatmap = document.querySelectorAll('.heat');
   let score = 0;
-  let total = 0;
-  const questions = form.querySelectorAll('.question');
-
-  questions.forEach(q => {
-    const selected = q.querySelector('input[type=radio]:checked');
-    total++;
-    const heat = document.getElementById('heatmap').children[parseInt(q.id.replace('q',''))-21];
-    if(selected && selected.dataset.correct) {
+  questions.forEach((q,i)=>{
+    let selected = q.querySelector('input[type="radio"]:checked');
+    if(selected && selected.dataset.correct === "true"){
       score++;
-      if(heat) heat.classList.add('correct');
+      heatmap[i].classList.add('correct');
     } else {
-      if(heat) heat.classList.add('incorrect');
+      heatmap[i].classList.add('incorrect');
     }
   });
-
-  const percent = ((score/total)*100).toFixed(1);
-  const goStatus = percent >= 70 ? 'GO' : 'NO GO';
-
-  document.getElementById('result').innerHTML = `<strong>${name}</strong> scored ${score}/${total} (${percent}%) - <strong>${goStatus}</strong>`;
-}
+  alert("You answered " + score + " out of " + questions.length + " correctly.");
+});
 </script>
-</div>
+
 </body>
 </html>
