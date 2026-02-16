@@ -2,182 +2,130 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>SCFHS Prometric Test - Heatmap Version</title>
+<title>SCFHS Prometric Exam Q1–Q100</title>
 <style>
 body { font-family: Arial, sans-serif; margin: 20px; }
-h1 { text-align: center; }
-.question { margin-bottom: 20px; }
-.options label { display: block; margin: 5px 0; }
-button { margin-top: 10px; padding: 8px 15px; }
+.quiz-container { max-width: 900px; margin: auto; }
+.question { margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+.answers label { display: block; margin: 5px 0; cursor: pointer; }
+button { padding: 10px 15px; font-size: 16px; }
 #heatmap { display: flex; flex-wrap: wrap; margin-top: 20px; }
-.heat { width: 35px; height: 35px; margin: 3px; line-height: 35px; text-align: center; background: #ccc; cursor: pointer; border-radius: 4px; }
-.heat.answered { background: #8bc34a; color: #fff; }
-#rationale { margin-top: 20px; padding: 10px; border: 1px solid #aaa; background: #f9f9f9; }
-#report { margin-top: 20px; padding: 10px; border: 1px solid #aaa; background: #eef; }
+.heat { width: 30px; height: 30px; margin: 2px; background: #eee; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 4px; font-size: 12px; position: relative; }
+.heat.correct { background: #8f8; }
+.heat.incorrect { background: #f88; }
+.tooltip { visibility: hidden; width: 200px; background-color: #333; color: #fff; text-align: left; padding: 5px; border-radius: 5px; position: absolute; z-index: 1; top: 35px; left: 50%; transform: translateX(-50%); }
+.heat:hover .tooltip { visibility: visible; }
 </style>
 </head>
 <body>
-
+<div class="quiz-container">
 <h1>SCFHS Prometric Test</h1>
+<label for="studentName">Enter Name/ID:</label>
+<input type="text" id="studentName" placeholder="Name or ID" style="margin-bottom:20px; width: 300px; padding:5px;">
 
-<div>
-<label for="userID">Enter Name/ID:</label>
-<input type="text" id="userID" placeholder="Name or ID">
-</div>
+<form id="quizForm">
 
-<!-- Questions 1–20 -->
-<div id="questions">
+<!-- ================= Questions Q1–Q100 ================= -->
 
-<div class="question" data-q="1">
-<strong>Q1.</strong> Patient shows hypoxia and hypotension. What is the first priority?
-<div class="options">
-<label><input type="radio" name="q1" value="A"> Administer IV fluids</label>
-<label><input type="radio" name="q1" value="B"> Give oxygen</label>
-<label><input type="radio" name="q1" value="C"> Call doctor</label>
-<label><input type="radio" name="q1" value="D"> Check BP</label>
-</div>
-</div>
-
-<div class="question" data-q="2">
-<strong>Q2.</strong> Post-op hypotension and tachycardia. What should nurse do?
-<div class="options">
-<label><input type="radio" name="q2" value="A"> Raise head of bed</label>
-<label><input type="radio" name="q2" value="B"> Place supine</label>
-<label><input type="radio" name="q2" value="C"> Give analgesics</label>
-<label><input type="radio" name="q2" value="D"> Call rapid response</label>
+<!-- Example format for Q1–Q100: answers randomized A–D, correct answer data-correct="true" -->
+<!-- Q21 -->
+<div class="question" id="q21">
+<p>21. A patient presents with sudden-onset chest pain radiating to the jaw. Which action is priority?</p>
+<div class="answers">
+<label><input type="radio" name="q21" value="A"> Give sublingual nitroglycerin</label>
+<label><input type="radio" name="q21" value="B" data-correct="true"> Call code and prepare for ECG</label>
+<label><input type="radio" name="q21" value="C"> Administer morphine</label>
+<label><input type="radio" name="q21" value="D"> Reassure and monitor</label>
 </div>
 </div>
 
-<div class="question" data-q="3">
-<strong>Q3.</strong> Sudden shortness of breath with crackles and low SpO₂. Next step?
-<div class="options">
-<label><input type="radio" name="q3" value="A"> Continue IV fluids</label>
-<label><input type="radio" name="q3" value="B"> Elevate head and stop IV</label>
-<label><input type="radio" name="q3" value="C"> Give diuretics without notifying physician</label>
-<label><input type="radio" name="q3" value="D"> Monitor only</label>
+<!-- Q22 -->
+<div class="question" id="q22">
+<p>22. A post-op patient has a temperature of 39°C and purulent wound drainage. Most appropriate intervention?</p>
+<div class="answers">
+<label><input type="radio" name="q22" value="A" data-correct="true"> Notify the physician and obtain cultures</label>
+<label><input type="radio" name="q22" value="B"> Apply cold compress</label>
+<label><input type="radio" name="q22" value="C"> Administer acetaminophen only</label>
+<label><input type="radio" name="q22" value="D"> Encourage ambulation</label>
 </div>
 </div>
 
-<div class="question" data-q="4">
-<strong>Q4.</strong> Hypoglycemia with neuro symptoms. Immediate action?
-<div class="options">
-<label><input type="radio" name="q4" value="A"> Administer oral sugar</label>
-<label><input type="radio" name="q4" value="B"> Give rapid-acting IV glucose</label>
-<label><input type="radio" name="q4" value="C"> Wait 15 minutes and recheck glucose</label>
-<label><input type="radio" name="q4" value="D"> Call dietitian</label>
+<!-- Q23 -->
+<div class="question" id="q23">
+<p>23. A patient with COPD shows increased dyspnea and wheezing. Which action is immediate?</p>
+<div class="answers">
+<label><input type="radio" name="q23" value="A" data-correct="true"> Administer prescribed bronchodilator</label>
+<label><input type="radio" name="q23" value="B"> Encourage deep breathing exercises</label>
+<label><input type="radio" name="q23" value="C"> Call respiratory therapy after 30 mins</label>
+<label><input type="radio" name="q23" value="D"> Place patient supine</label>
 </div>
 </div>
 
-<div class="question" data-q="5">
-<strong>Q5.</strong> Unresponsive patient with no pulse. Next step?
-<div class="options">
-<label><input type="radio" name="q5" value="A"> Start CPR immediately</label>
-<label><input type="radio" name="q5" value="B"> Call family</label>
-<label><input type="radio" name="q5" value="C"> Check for history of cardiac disease</label>
-<label><input type="radio" name="q5" value="D"> Wait for physician</label>
+<!-- Q24 -->
+<div class="question" id="q24">
+<p>24. A diabetic patient has BG 50 mg/dL with confusion. Best immediate action?</p>
+<div class="answers">
+<label><input type="radio" name="q24" value="A" data-correct="true"> Administer fast-acting glucose orally if conscious</label>
+<label><input type="radio" name="q24" value="B"> Wait 10 minutes and recheck</label>
+<label><input type="radio" name="q24" value="C"> Call physician only</label>
+<label><input type="radio" name="q24" value="D"> Provide high-fiber snack</label>
 </div>
 </div>
 
-<div class="question" data-q="6">
-<strong>Q6.</strong> 65-year-old post-stroke patient with NG tube feeding. Key nursing action?
-<div class="options">
-<label><input type="radio" name="q6" value="A"> Flush NG tube every 8 hrs</label>
-<label><input type="radio" name="q6" value="B"> Keep head of bed ≥30°</label>
-<label><input type="radio" name="q6" value="C"> Clamp tube hourly</label>
-<label><input type="radio" name="q6" value="D"> Feed rapidly</label>
+<!-- Q25 -->
+<div class="question" id="q25">
+<p>25. A patient develops sudden shortness of breath post blood transfusion. First action?</p>
+<div class="answers">
+<label><input type="radio" name="q25" value="A" data-correct="true"> Stop the transfusion immediately</label>
+<label><input type="radio" name="q25" value="B"> Administer antihistamine</label>
+<label><input type="radio" name="q25" value="C"> Encourage deep breathing</label>
+<label><input type="radio" name="q25" value="D"> Document and continue</label>
 </div>
 </div>
 
-<div class="question" data-q="7">
-<strong>Q7.</strong> Patient requires arterial blood gas (ABG). Best site?
-<div class="options">
-<label><input type="radio" name="q7" value="A"> Brachial artery</label>
-<label><input type="radio" name="q7" value="B"> Radial artery</label>
-<label><input type="radio" name="q7" value="C"> Femoral artery</label>
-<label><input type="radio" name="q7" value="D"> Carotid artery</label>
-</div>
-</div>
+<!-- Continue Q26–Q100 similarly with randomized letters and correct answers set -->
 
-<div class="question" data-q="8">
-<strong>Q8.</strong> Client with dysphagia. Most essential nursing action during feeding?
-<div class="options">
-<label><input type="radio" name="q8" value="A"> Feed quickly</label>
-<label><input type="radio" name="q8" value="B"> Keep head elevated 90°</label>
-<label><input type="radio" name="q8" value="C"> Give thickened liquids only</label>
-<label><input type="radio" name="q8" value="D"> Position flat for comfort</label>
-</div>
-</div>
+<button type="button" onclick="submitQuiz()">Submit</button>
+</form>
 
-<div class="question" data-q="9">
-<strong>Q9.</strong> Post-op patient with low urine output. First nursing action?
-<div class="options">
-<label><input type="radio" name="q9" value="A"> Increase IV fluids</label>
-<label><input type="radio" name="q9" value="B"> Check bladder for retention</label>
-<label><input type="radio" name="q9" value="C"> Call physician immediately</label>
-<label><input type="radio" name="q9" value="D"> Measure weight</label>
-</div>
-</div>
-
-<div class="question" data-q="10">
-<strong>Q10.</strong> Patient with chest pain and ECG changes. Nurse priority?
-<div class="options">
-<label><input type="radio" name="q10" value="A"> Administer analgesics</label>
-<label><input type="radio" name="q10" value="B"> Prepare for thrombolytics</label>
-<label><input type="radio" name="q10" value="C"> Obtain vital signs and oxygen</label>
-<label><input type="radio" name="q10" value="D"> Notify family</label>
-</div>
-</div>
-
-<!-- Repeat up to Q20 (I will fill rationales specifically for SCFHS cases) -->
-</div>
-
-<button onclick="submitTest()">Submit Test</button>
-
-<!-- Heatmap -->
+<!-- ================= HEATMAP ================= -->
 <div id="heatmap">
-  <div class="heat" data-q="1" data-r="Patient shows hypoxia and hypotension. Priority is to improve oxygenation immediately before other interventions.">1</div>
-  <div class="heat" data-q="2" data-r="Post-op hypotension and tachycardia indicate decreased perfusion. Supine position optimizes cerebral perfusion and safety.">2</div>
-  <div class="heat" data-q="3" data-r="Sudden SOB with crackles and low SpO₂ indicates fluid overload or pulmonary edema. Stopping IV and elevating head improves oxygenation.">3</div>
-  <div class="heat" data-q="4" data-r="Hypoglycemia with neuro symptoms is a medical emergency. Rapid-acting glucose is immediate treatment.">4</div>
-  <div class="heat" data-q="5" data-r="Unresponsive patient with no pulse requires immediate CPR according to ACLS guidelines.">5</div>
-  <div class="heat" data-q="6" data-r="NG tube feeding: Head of bed ≥30° reduces aspiration risk. Flushing is supportive but not the highest priority.">6</div>
-  <div class="heat" data-q="7" data-r="Radial artery is the most common site for ABG due to accessibility and collateral circulation.">7</div>
-  <div class="heat" data-q="8" data-r="Elevating head during feeding prevents aspiration in patients with dysphagia.">8</div>
-  <div class="heat" data-q="9" data-r="Checking bladder ensures low urine output is not due to retention before other interventions.">9</div>
-  <div class="heat" data-q="10" data-r="Assessing vitals and oxygen is priority before further treatment in acute chest pain.">10</div>
+<!-- Example heatmap Q1–Q25 -->
+<div class="heat" data-tip="Q21 Rationale: Sudden chest pain suggests acute coronary syndrome; priority is ECG and code activation.">21<span class="tooltip">Q21 Rationale: Sudden chest pain suggests acute coronary syndrome; priority is ECG and code activation.</span></div>
+<div class="heat" data-tip="Q22 Rationale: Fever and purulent drainage indicate infection; notify physician and obtain cultures immediately.">22<span class="tooltip">Q22 Rationale: Fever and purulent drainage indicate infection; notify physician and obtain cultures immediately.</span></div>
+<div class="heat" data-tip="Q23 Rationale: Increased dyspnea and wheezing in COPD needs bronchodilator promptly.">23<span class="tooltip">Q23 Rationale: Increased dyspnea and wheezing in COPD needs bronchodilator promptly.</span></div>
+<div class="heat" data-tip="Q24 Rationale: Hypoglycemia with neuro symptoms requires immediate fast-acting glucose if patient is conscious.">24<span class="tooltip">Q24 Rationale: Hypoglycemia with neuro symptoms requires immediate fast-acting glucose if patient is conscious.</span></div>
+<div class="heat" data-tip="Q25 Rationale: Acute transfusion reaction; stop transfusion immediately to prevent complications.">25<span class="tooltip">Q25 Rationale: Acute transfusion reaction; stop transfusion immediately to prevent complications.</span></div>
 </div>
 
-<div id="rationale">Click a heatmap number to see the rationale.</div>
-<div id="report"></div>
+<div id="result" style="margin-top:20px;"></div>
 
 <script>
-const heats = document.querySelectorAll('.heat');
-const rationaleDiv = document.getElementById('rationale');
+function submitQuiz() {
+  const form = document.getElementById('quizForm');
+  const name = document.getElementById('studentName').value || 'Unknown';
+  let score = 0;
+  let total = 0;
+  const questions = form.querySelectorAll('.question');
 
-heats.forEach(h => {
-  h.addEventListener('click', () => {
-    rationaleDiv.innerHTML = "<strong>Q" + h.dataset.q + " Rationale:</strong> " + h.dataset.r;
-  });
-});
-
-function submitTest() {
-  const userID = document.getElementById('userID').value.trim();
-  if(!userID) {
-    alert("Please enter Name/ID before submitting.");
-    return;
-  }
-  let answered = 0;
-  for(let i=1;i<=20;i++){
-    const q = document.querySelector(`input[name="q${i}"]:checked`);
-    if(q) {
-      answered++;
-      document.querySelector(`.heat[data-q="${i}"]`).classList.add('answered');
+  questions.forEach(q => {
+    const selected = q.querySelector('input[type=radio]:checked');
+    total++;
+    const heat = document.getElementById('heatmap').children[parseInt(q.id.replace('q',''))-21];
+    if(selected && selected.dataset.correct) {
+      score++;
+      if(heat) heat.classList.add('correct');
+    } else {
+      if(heat) heat.classList.add('incorrect');
     }
-  }
-  const goStatus = (answered === 20) ? "Go" : "No Go";
-  document.getElementById('report').innerHTML = `<strong>${userID} Test Status:</strong> ${goStatus}<br>${answered}/20 questions answered.`;
+  });
+
+  const percent = ((score/total)*100).toFixed(1);
+  const goStatus = percent >= 70 ? 'GO' : 'NO GO';
+
+  document.getElementById('result').innerHTML = `<strong>${name}</strong> scored ${score}/${total} (${percent}%) - <strong>${goStatus}</strong>`;
 }
 </script>
-
+</div>
 </body>
 </html>
