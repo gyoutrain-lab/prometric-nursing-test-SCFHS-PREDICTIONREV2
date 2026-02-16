@@ -2,19 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>SCFHS Prometric Test with Heatmap</title>
+<title>SCFHS Prometric Test - Heatmap Version</title>
 <style>
-  body { font-family: Arial, sans-serif; margin: 20px; }
-  h1 { text-align: center; }
-  .question { margin-bottom: 20px; }
-  .options label { display: block; margin: 5px 0; }
-  #submitBtn { padding: 10px 20px; font-size: 16px; }
-  #heatmap { display: flex; flex-wrap: wrap; margin-top: 20px; }
-  .heat { width: 30px; height: 30px; margin: 3px; background-color: #eee; display: flex; align-items: center; justify-content: center; cursor: pointer; position: relative; border-radius: 4px; }
-  .heat.correct { background-color: #4CAF50; color: white; }
-  .heat.wrong { background-color: #F44336; color: white; }
-  .tooltip { visibility: hidden; background-color: #333; color: #fff; text-align: left; border-radius: 6px; padding: 5px; position: absolute; z-index: 1; top: 35px; width: 250px; font-size: 12px; }
-  .heat:hover .tooltip { visibility: visible; }
+body { font-family: Arial, sans-serif; margin: 20px; }
+h1 { text-align: center; }
+.question { margin-bottom: 20px; }
+.options label { display: block; margin: 5px 0; }
+button { margin-top: 10px; padding: 8px 15px; }
+#heatmap { display: flex; flex-wrap: wrap; margin-top: 20px; }
+.heat { width: 35px; height: 35px; margin: 3px; line-height: 35px; text-align: center; background: #ccc; cursor: pointer; border-radius: 4px; }
+.heat.answered { background: #8bc34a; color: #fff; }
+#rationale { margin-top: 20px; padding: 10px; border: 1px solid #aaa; background: #f9f9f9; }
+#report { margin-top: 20px; padding: 10px; border: 1px solid #aaa; background: #eef; }
 </style>
 </head>
 <body>
@@ -22,993 +21,162 @@
 <h1>SCFHS Prometric Test</h1>
 
 <div>
-  <label for="nameID">Enter Name/ID:</label>
-  <input type="text" id="nameID" placeholder="Your Name or ID">
+<label for="userID">Enter Name/ID:</label>
+<input type="text" id="userID" placeholder="Name or ID">
 </div>
 
+<!-- Questions 1–20 -->
 <div id="questions">
-  <!-- Example for first 5 questions, replicate for all 100 -->
-  <div class="question" id="q1">
-    <p>1. Patient shows hypoxia and hypotension. What is the priority action?</p>
-    <div class="options">
-      <label><input type="radio" name="q1" value="A"> Administer IV fluids</label>
-      <label><input type="radio" name="q1" value="B"> Give oxygen immediately</label>
-      <label><input type="radio" name="q1" value="C"> Check blood pressure</label>
-      <label><input type="radio" name="q1" value="D"> Call physician</label>
-    </div>
-  </div>
 
- <div class="question">
-<b>Q2. A postoperative patient reports dizziness. BP dropped from 118/76 to 90/60 in 30 minutes. HR 112. What should the nurse do first?</b><br>
-<label><input type="radio" name="q2" value="1"> Place the patient supine and assess perfusion</label><br>
-<label><input type="radio" name="q2" value="0"> Administer prescribed analgesic</label><br>
-<label><input type="radio" name="q2" value="0"> Encourage oral fluids</label><br>
-<label><input type="radio" name="q2" value="0"> Recheck blood pressure later</label>
+<div class="question" data-q="1">
+<strong>Q1.</strong> Patient shows hypoxia and hypotension. What is the first priority?
+<div class="options">
+<label><input type="radio" name="q1" value="A"> Administer IV fluids</label>
+<label><input type="radio" name="q1" value="B"> Give oxygen</label>
+<label><input type="radio" name="q1" value="C"> Call doctor</label>
+<label><input type="radio" name="q1" value="D"> Check BP</label>
 </div>
-
-<div class="question">
-<b>Q3. A patient receiving IV fluids develops sudden shortness of breath and crackles. SpO₂ is 86%. What is the immediate nursing action?</b><br>
-<label><input type="radio" name="q3" value="1"> Stop the infusion and elevate the head of bed</label><br>
-<label><input type="radio" name="q3" value="0"> Reduce IV rate</label><br>
-<label><input type="radio" name="q3" value="0"> Notify the physician</label><br>
-<label><input type="radio" name="q3" value="0"> Monitor lung sounds</label>
-</div>
-
-<div class="question">
-<b>Q4. A diabetic patient is confused and diaphoretic. Capillary glucose is 42 mg/dL. What is the nurse’s priority?</b><br>
-<label><input type="radio" name="q4" value="1"> Administer rapid-acting glucose</label><br>
-<label><input type="radio" name="q4" value="0"> Call the physician</label><br>
-<label><input type="radio" name="q4" value="0"> Start IV fluids</label><br>
-<label><input type="radio" name="q4" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q5. A patient suddenly becomes unresponsive. No carotid pulse is palpable. What should the nurse do first?</b><br>
-<label><input type="radio" name="q5" value="1"> Begin chest compressions</label><br>
-<label><input type="radio" name="q5" value="0"> Check blood pressure</label><br>
-<label><input type="radio" name="q5" value="0"> Call the family</label><br>
-<label><input type="radio" name="q5" value="0"> Prepare emergency drugs</label>
-</div>
-<!-- ================= Q6–Q10 ================= -->
-
-<div class="question">
-<b>Q6. A patient with sepsis has urine output of 20 mL/hr for 2 hours. BP is 92/58. What does this finding indicate?</b><br>
-<label><input type="radio" name="q6" value="1"> Inadequate tissue perfusion</label><br>
-<label><input type="radio" name="q6" value="0"> Normal renal adaptation</label><br>
-<label><input type="radio" name="q6" value="0"> Expected response to antibiotics</label><br>
-<label><input type="radio" name="q6" value="0"> No immediate concern</label>
-</div>
-
-<!-- Rationale embedded for heatmap tooltip after submit -->
-<script>
-rationales['q6'] = "This low urine output with hypotension indicates decreased renal perfusion due to sepsis-related hypoperfusion. Immediate intervention is required to prevent acute kidney injury.";
-</script>
-
-<div class="question">
-<b>Q7. A patient receiving morphine IV becomes difficult to arouse. RR is 8/min. What is the nurse’s priority?</b><br>
-<label><input type="radio" name="q7" value="1"> Support airway and breathing</label><br>
-<label><input type="radio" name="q7" value="0"> Document sedation level</label><br>
-<label><input type="radio" name="q7" value="0"> Reassess in 30 minutes</label><br>
-<label><input type="radio" name="q7" value="0"> Call the physician</label>
-</div>
-
-<script>
-rationales['q7'] = "Morphine overdose can depress respiration. Priority is airway support and monitoring breathing, followed by naloxone if necessary.";
-</script>
-
-<div class="question">
-<b>Q8. A trauma patient arrives confused with unequal pupils. What should the nurse do first?</b><br>
-<label><input type="radio" name="q8" value="1"> Ensure airway and cervical spine protection</label><br>
-<label><input type="radio" name="q8" value="0"> Obtain consent</label><br>
-<label><input type="radio" name="q8" value="0"> Perform a full neurological exam</label><br>
-<label><input type="radio" name="q8" value="0"> Contact family</label>
-</div>
-
-<script>
-rationales['q8'] = "Trauma patients with unequal pupils may have raised ICP. Priority is airway and cervical spine protection to prevent secondary injury.";
-</script>
-
-<div class="question">
-<b>Q9. A patient complains of chest pain radiating to the left arm. BP 150/90, HR 104. What is the nurse’s priority?</b><br>
-<label><input type="radio" name="q9" value="1"> Administer oxygen and assess ECG</label><br>
-<label><input type="radio" name="q9" value="0"> Give antacid</label><br>
-<label><input type="radio" name="q9" value="0"> Encourage rest</label><br>
-<label><input type="radio" name="q9" value="0"> Document pain scale</label>
-</div>
-<!-- ================= Q11–Q50 ================= -->
-
-
-<!-- Continue Q36–Q50 using the same pattern with specific rationale -->
-
-
-<script>
-rationales['q9'] = "Chest pain radiating to left arm suggests possible myocardial infarction. Oxygen and ECG assessment are immediate priorities to prevent cardiac compromise.";
-</script>
-
-<div class="question">
-<b>Q10. A postoperative patient has saturated the dressing within 20 minutes. What should the nurse do first?</b><br>
-<label><input type="radio" name="q10" value="1"> Apply pressure and assess bleeding</label><br>
-<label><input type="radio" name="q10" value="0"> Change the dressing</label><br>
-<label><input type="radio" name="q10" value="0"> Notify the surgeon</label><br>
-<label><input type="radio" name="q10" value="0"> Document findings</label>
-</div>
-<div class="question">
-<b>Q11. A 5-week-old infant presents with poor feeding and lethargy. Which action should the nurse take first?</b><br>
-<label><input type="radio" name="q11" value="1"> Assess vital signs and oxygenation</label><br>
-<label><input type="radio" name="q11" value="0"> Notify the physician immediately</label><br>
-<label><input type="radio" name="q11" value="0"> Initiate IV fluids</label><br>
-<label><input type="radio" name="q11" value="0"> Document feeding history</label>
-</div>
-
-<div class="question">
-<b>Q12. A patient develops sudden shortness of breath after receiving IV fluids. What is the nurse’s priority?</b><br>
-<label><input type="radio" name="q12" value="1"> Stop IV fluids and assess respiratory status</label><br>
-<label><input type="radio" name="q12" value="0"> Increase oxygen flow</label><br>
-<label><input type="radio" name="q12" value="0"> Notify the physician</label><br>
-<label><input type="radio" name="q12" value="0"> Document the episode</label>
-</div>
-
-<div class="question">
-<b>Q13. A patient post-appendectomy has a sudden rise in temperature and tachycardia. What should the nurse do first?</b><br>
-<label><input type="radio" name="q13" value="1"> Assess surgical site and signs of infection</label><br>
-<label><input type="radio" name="q13" value="0"> Administer antipyretics</label><br>
-<label><input type="radio" name="q13" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q13" value="0"> Document vital signs</label>
-</div>
-
-<div class="question">
-<b>Q14. A diabetic patient presents with confusion, diaphoresis, and pallor. Which action is priority?</b><br>
-<label><input type="radio" name="q14" value="1"> Check blood glucose and treat hypoglycemia</label><br>
-<label><input type="radio" name="q14" value="0"> Notify the physician</label><br>
-<label><input type="radio" name="q14" value="0"> Offer a meal</label><br>
-<label><input type="radio" name="q14" value="0"> Document symptoms</label>
-</div>
-
-<div class="question">
-<b>Q15. A patient receiving heparin develops sudden dyspnea and chest pain. What is the priority action?</b><br>
-<label><input type="radio" name="q15" value="1"> Assess airway, breathing, and circulation</label><br>
-<label><input type="radio" name="q15" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q15" value="0"> Stop heparin infusion</label><br>
-<label><input type="radio" name="q15" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q16. A patient on NG tube feeding has sudden abdominal distension and vomiting. What should the nurse do first?</b><br>
-<label><input type="radio" name="q16" value="1"> Stop feeding and assess bowel sounds</label><br>
-<label><input type="radio" name="q16" value="0"> Reposition patient</label><br>
-<label><input type="radio" name="q16" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q16" value="0"> Document episode</label>
-</div>
-
-<div class="question">
-<b>Q17. A patient with acute asthma suddenly has wheezing and accessory muscle use. What is the first action?</b><br>
-<label><input type="radio" name="q17" value="1"> Assess airway and administer prescribed bronchodilator</label><br>
-<label><input type="radio" name="q17" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q17" value="0"> Provide oxygen</label><br>
-<label><input type="radio" name="q17" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q18. A patient with chronic heart failure gains 3 kg in 2 days and has edema. What should the nurse do first?</b><br>
-<label><input type="radio" name="q18" value="1"> Assess respiratory and cardiac status</label><br>
-<label><input type="radio" name="q18" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q18" value="0"> Adjust diuretics per order</label><br>
-<label><input type="radio" name="q18" value="0"> Document intake and output</label>
-</div>
-
-<div class="question">
-<b>Q19. A post-op patient has sudden severe abdominal pain and hypotension. What should the nurse do first?</b><br>
-<label><input type="radio" name="q19" value="1"> Assess for signs of internal bleeding</label><br>
-<label><input type="radio" name="q19" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q19" value="0"> Administer pain medication</label><br>
-<label><input type="radio" name="q19" value="0"> Document vital signs</label>
-</div>
-
-<div class="question">
-<b>Q20. A patient receiving chemotherapy has a fever of 38.5°C. What is the priority?</b><br>
-<label><input type="radio" name="q20" value="1"> Assess for neutropenic infection and notify physician</label><br>
-<label><input type="radio" name="q20" value="0"> Administer antipyretics</label><br>
-<label><input type="radio" name="q20" value="0"> Encourage fluids</label><br>
-<label><input type="radio" name="q20" value="0"> Document temperature</label>
-</div>
-
-<!-- Continue Q21–Q50 with same pattern -->
-
-<div class="question">
-<b>Q21. A patient develops sudden hematuria after catheterization. First action?</b><br>
-<label><input type="radio" name="q21" value="1"> Assess catheter placement and urinary output</label><br>
-<label><input type="radio" name="q21" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q21" value="0"> Irrigate catheter</label><br>
-<label><input type="radio" name="q21" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q22. A patient on warfarin presents with bruising and nosebleeds. What should the nurse do first?</b><br>
-<label><input type="radio" name="q22" value="1"> Assess for signs of bleeding and vitals</label><br>
-<label><input type="radio" name="q22" value="0"> Hold warfarin</label><br>
-<label><input type="radio" name="q22" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q22" value="0"> Document findings</label>
-</div>
-
-<!-- Q23–50 follow the same pattern -->
-<!-- ================= Q23–Q50 ================= -->
-
-<div class="question">
-<b>Q23. A patient with COPD develops increased shortness of breath and cyanosis. What is the first action?</b><br>
-<label><input type="radio" name="q23" value="1"> Assess airway, breathing, and oxygen saturation</label><br>
-<label><input type="radio" name="q23" value="0"> Increase oxygen flow</label><br>
-<label><input type="radio" name="q23" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q23" value="0"> Document symptoms</label>
-</div>
-
-<div class="question">
-<b>Q24. A post-operative patient has sudden confusion and agitation. What is the priority nursing action?</b><br>
-<label><input type="radio" name="q24" value="1"> Assess oxygenation and vital signs</label><br>
-<label><input type="radio" name="q24" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q24" value="0"> Administer sedative</label><br>
-<label><input type="radio" name="q24" value="0"> Document behavior</label>
-</div>
-
-<div class="question">
-<b>Q25. A patient receiving IV antibiotics develops a rash and itching. First action?</b><br>
-<label><input type="radio" name="q25" value="1"> Stop infusion and assess for anaphylaxis</label><br>
-<label><input type="radio" name="q25" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q25" value="0"> Administer antihistamine</label><br>
-<label><input type="radio" name="q25" value="0"> Document reaction</label>
-</div>
-
-<div class="question">
-<b>Q26. A patient with hypovolemic shock has low BP and tachycardia. What is the priority?</b><br>
-<label><input type="radio" name="q26" value="1"> Assess airway, breathing, and circulation; start IV fluids</label><br>
-<label><input type="radio" name="q26" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q26" value="0"> Place patient in Trendelenburg</label><br>
-<label><input type="radio" name="q26" value="0"> Document vitals</label>
-</div>
-
-<div class="question">
-<b>Q27. A patient has sudden onset of chest pain radiating to the left arm. What is the first nursing action?</b><br>
-<label><input type="radio" name="q27" value="1"> Assess airway, breathing, circulation, and vitals; prepare for ECG</label><br>
-<label><input type="radio" name="q27" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q27" value="0"> Administer pain medication</label><br>
-<label><input type="radio" name="q27" value="0"> Document symptoms</label>
-</div>
-
-<div class="question">
-<b>Q28. A patient on PCA (patient-controlled analgesia) reports respiratory rate 8/min. What should the nurse do first?</b><br>
-<label><input type="radio" name="q28" value="1"> Stop PCA, assess airway and breathing, and notify physician</label><br>
-<label><input type="radio" name="q28" value="0"> Administer naloxone</label><br>
-<label><input type="radio" name="q28" value="0"> Encourage deep breathing</label><br>
-<label><input type="radio" name="q28" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q29. A patient develops sudden severe headache and visual changes while on anticoagulant therapy. First action?</b><br>
-<label><input type="radio" name="q29" value="1"> Assess neurologic status and notify physician immediately</label><br>
-<label><input type="radio" name="q29" value="0"> Administer pain medication</label><br>
-<label><input type="radio" name="q29" value="0"> Document symptoms</label><br>
-<label><input type="radio" name="q29" value="0"> Hold anticoagulant</label>
-</div>
-
-<div class="question">
-<b>Q30. A patient post-thyroidectomy has stridor and difficulty breathing. What is the priority action?</b><br>
-<label><input type="radio" name="q30" value="1"> Assess airway and prepare for emergency airway intervention</label><br>
-<label><input type="radio" name="q30" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q30" value="0"> Administer oxygen</label><br>
-<label><input type="radio" name="q30" value="0"> Document respiratory status</label>
-</div>
-
-<div class="question">
-<b>Q31. A patient receiving opioids reports sudden hypotension and pallor. First action?</b><br>
-<label><input type="radio" name="q31" value="1"> Assess vitals, airway, breathing, and circulation</label><br>
-<label><input type="radio" name="q31" value="0"> Administer IV fluids</label><br>
-<label><input type="radio" name="q31" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q31" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q32. A patient on continuous enteral feeding develops diarrhea and cramping. First action?</b><br>
-<label><input type="radio" name="q32" value="1"> Assess abdomen, check tube placement, and notify physician if severe</label><br>
-<label><input type="radio" name="q32" value="0"> Stop feeding immediately</label><br>
-<label><input type="radio" name="q32" value="0"> Administer antidiarrheal</label><br>
-<label><input type="radio" name="q32" value="0"> Document output</label>
-</div>
-
-<div class="question">
-<b>Q33. A patient post-lumbar puncture complains of severe headache. What is the first action?</b><br>
-<label><input type="radio" name="q33" value="1"> Assess vitals and position patient supine; provide hydration</label><br>
-<label><input type="radio" name="q33" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q33" value="0"> Administer analgesics</label><br>
-<label><input type="radio" name="q33" value="0"> Document symptoms</label>
-</div>
-
-<div class="question">
-<b>Q34. A patient develops sudden jaundice and dark urine after starting a new medication. First action?</b><br>
-<label><input type="radio" name="q34" value="1"> Assess liver function and notify physician</label><br>
-<label><input type="radio" name="q34" value="0"> Stop medication immediately</label><br>
-<label><input type="radio" name="q34" value="0"> Document findings</label><br>
-<label><input type="radio" name="q34" value="0"> Administer supportive therapy</label>
-</div>
-
-<div class="question">
-<b>Q35. A patient has sudden inability to move one side of the body. First nursing action?</b><br>
-<label><input type="radio" name="q35" value="1"> Assess neurologic status and call rapid response</label><br>
-<label><input type="radio" name="q35" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q35" value="0"> Administer oxygen</label><br>
-<label><input type="radio" name="q35" value="0"> Document findings</label>
-</div>
-<div class="question">
-<b>Q36. A post-op patient develops sudden shortness of breath and decreased SpO2. What is the first nursing action?</b><br>
-<label><input type="radio" name="q36" value="1"> Assess airway, breathing, and oxygen saturation; prepare for oxygen therapy</label><br>
-<label><input type="radio" name="q36" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q36" value="0"> Elevate head of bed</label><br>
-<label><input type="radio" name="q36" value="0"> Document vitals</label>
-</div>
-
-<div class="question">
-<b>Q37. A patient on anticoagulant therapy develops nosebleed and bruising. First action?</b><br>
-<label><input type="radio" name="q37" value="1"> Assess bleeding severity, vitals, and notify physician immediately</label><br>
-<label><input type="radio" name="q37" value="0"> Apply pressure and wait</label><br>
-<label><input type="radio" name="q37" value="0"> Stop anticoagulant</label><br>
-<label><input type="radio" name="q37" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q38. A patient receiving insulin reports dizziness and sweating. First action?</b><br>
-<label><input type="radio" name="q38" value="1"> Assess blood glucose immediately and treat hypoglycemia</label><br>
-<label><input type="radio" name="q38" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q38" value="0"> Administer more insulin</label><br>
-<label><input type="radio" name="q38" value="0"> Document symptoms</label>
-</div>
-
-<div class="question">
-<b>Q39. A patient post-thoracentesis develops sudden dyspnea and hypotension. First action?</b><br>
-<label><input type="radio" name="q39" value="1"> Assess airway, breathing, circulation, and notify physician immediately</label><br>
-<label><input type="radio" name="q39" value="0"> Administer IV fluids</label><br>
-<label><input type="radio" name="q39" value="0"> Position patient upright</label><br>
-<label><input type="radio" name="q39" value="0"> Document symptoms</label>
-</div>
-
-<div class="question">
-<b>Q40. A patient with chest tube reports sudden severe pain and subcutaneous emphysema. First action?</b><br>
-<label><input type="radio" name="q40" value="1"> Assess vitals, tube patency, and notify physician immediately</label><br>
-<label><input type="radio" name="q40" value="0"> Administer analgesics</label><br>
-<label><input type="radio" name="q40" value="0"> Document symptoms</label><br>
-<label><input type="radio" name="q40" value="0"> Encourage coughing</label>
-</div>
-
-<div class="question">
-<b>Q41. A patient develops acute confusion and agitation after surgery. First action?</b><br>
-<label><input type="radio" name="q41" value="1"> Assess airway, breathing, circulation, and oxygenation; rule out hypoxia or metabolic causes</label><br>
-<label><input type="radio" name="q41" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q41" value="0"> Administer sedative</label><br>
-<label><input type="radio" name="q41" value="0"> Document behavior</label>
-</div>
-
-<div class="question">
-<b>Q42. A patient with NG tube feeding develops sudden vomiting and aspiration risk. First action?</b><br>
-<label><input type="radio" name="q42" value="1"> Elevate head of bed, assess airway, and suction if needed</label><br>
-<label><input type="radio" name="q42" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q42" value="0"> Stop feeding</label><br>
-<label><input type="radio" name="q42" value="0"> Document vomiting</label>
-</div>
-
-<div class="question">
-<b>Q43. A patient on heparin infusion develops sudden drop in platelet count. First action?</b><br>
-<label><input type="radio" name="q43" value="1"> Assess for signs of bleeding and notify physician immediately (possible HIT)</label><br>
-<label><input type="radio" name="q43" value="0"> Stop infusion immediately</label><br>
-<label><input type="radio" name="q43" value="0"> Administer protamine</label><br>
-<label><input type="radio" name="q43" value="0"> Document platelet count</label>
-</div>
-
-<div class="question">
-<b>Q44. A patient with chest pain and ST-elevation on ECG. First nursing action?</b><br>
-<label><input type="radio" name="q44" value="1"> Assess vitals, monitor ECG continuously, and notify cardiology/physician</label><br>
-<label><input type="radio" name="q44" value="0"> Administer aspirin</label><br>
-<label><input type="radio" name="q44" value="0"> Provide rest</label><br>
-<label><input type="radio" name="q44" value="0"> Document pain</label>
-</div>
-
-<div class="question">
-<b>Q45. A patient develops sudden severe allergic reaction after medication administration. First action?</b><br>
-<label><input type="radio" name="q45" value="1"> Stop medication, assess airway, breathing, circulation, and prepare for epinephrine</label><br>
-<label><input type="radio" name="q45" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q45" value="0"> Administer antihistamine</label><br>
-<label><input type="radio" name="q45" value="0"> Document reaction</label>
-</div>
-
-<div class="question">
-<b>Q46. A patient post-op develops sudden hypotension and tachycardia. First nursing action?</b><br>
-<label><input type="radio" name="q46" value="1"> Assess airway, breathing, circulation; check for bleeding; notify physician</label><br>
-<label><input type="radio" name="q46" value="0"> Administer IV fluids only</label><br>
-<label><input type="radio" name="q46" value="0"> Elevate legs</label><br>
-<label><input type="radio" name="q46" value="0"> Document vitals</label>
-</div>
-
-<div class="question">
-<b>Q47. A patient on PCA pump shows RR 6/min and decreased consciousness. First action?</b><br>
-<label><input type="radio" name="q47" value="1"> Stop PCA, assess airway and breathing, and notify physician</label><br>
-<label><input type="radio" name="q47" value="0"> Administer naloxone</label><br>
-<label><input type="radio" name="q47" value="0"> Encourage deep breathing</label><br>
-<label><input type="radio" name="q47" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q48. A patient post-thyroidectomy develops neck swelling and stridor. First action?</b><br>
-<label><input type="radio" name="q48" value="1"> Assess airway immediately, prepare for emergency airway intervention</label><br>
-<label><input type="radio" name="q48" value="0"> Notify physician</label><br>
-<label><input type="radio" name="q48" value="0"> Administer oxygen</label><br>
-<label><input type="radio" name="q48" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q49. A patient develops sudden hematuria and flank pain after lithotripsy. First action?</b><br>
-<label><input type="radio" name="q49" value="1"> Assess vitals, urine output, and notify physician</label><br>
-<label><input type="radio" name="q49" value="0"> Administer analgesics</label><br>
-<label><input type="radio" name="q49" value="0"> Encourage hydration</label><br>
-<label><input type="radio" name="q49" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q50. A patient receiving chemotherapy develops sudden fever and chills. First nursing action?</b><br>
-<label><input type="radio" name="q50" value="1"> Assess temperature, vitals, and notify physician immediately (possible neutropenic fever)</label><br>
-<label><input type="radio" name="q50" value="0"> Administer antipyretic</label><br>
-<label><input type="radio" name="q50" value="0"> Encourage fluids</label><br>
-<label><input type="radio" name="q50" value="0"> Document symptoms</label>
-</div>
-<div class="question">
-<b>Q51. A patient post-cataract surgery reports sudden severe eye pain and decreased vision. First action?</b><br>
-<label><input type="radio" name="q51" value="1"> Assess intraocular pressure and notify physician immediately (possible acute glaucoma)</label><br>
-<label><input type="radio" name="q51" value="0"> Administer prescribed analgesic</label><br>
-<label><input type="radio" name="q51" value="0"> Apply cold compress</label><br>
-<label><input type="radio" name="q51" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q52. A patient with chest tube suddenly reports large air leak and subcutaneous emphysema. First action?</b><br>
-<label><input type="radio" name="q52" value="1"> Assess tube patency, vitals, and notify physician immediately</label><br>
-<label><input type="radio" name="q52" value="0"> Apply dressing over site</label><br>
-<label><input type="radio" name="q52" value="0"> Encourage deep breathing</label><br>
-<label><input type="radio" name="q52" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q53. A post-op patient develops sudden oliguria and rising creatinine. First action?</b><br>
-<label><input type="radio" name="q53" value="1"> Assess fluid status, vital signs, and notify physician (possible acute kidney injury)</label><br>
-<label><input type="radio" name="q53" value="0"> Administer diuretic</label><br>
-<label><input type="radio" name="q53" value="0"> Restrict fluids</label><br>
-<label><input type="radio" name="q53" value="0"> Document urine output</label>
-</div>
-
-<div class="question">
-<b>Q54. A patient on IV antibiotics develops rash and facial swelling. First action?</b><br>
-<label><input type="radio" name="q54" value="1"> Stop infusion, assess airway, notify physician (possible anaphylaxis)</label><br>
-<label><input type="radio" name="q54" value="0"> Administer antihistamine only</label><br>
-<label><input type="radio" name="q54" value="0"> Document reaction</label><br>
-<label><input type="radio" name="q54" value="0"> Continue infusion at slower rate</label>
-</div>
-
-<div class="question">
-<b>Q55. A patient post-hip replacement develops sudden calf swelling and pain. First action?</b><br>
-<label><input type="radio" name="q55" value="1"> Assess for DVT, measure calf circumference, and notify physician immediately</label><br>
-<label><input type="radio" name="q55" value="0"> Apply warm compress</label><br>
-<label><input type="radio" name="q55" value="0"> Encourage ambulation</label><br>
-<label><input type="radio" name="q55" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q56. A patient with NG tube develops sudden epigastric pain and vomiting with coffee-ground appearance. First action?</b><br>
-<label><input type="radio" name="q56" value="1"> Assess for GI bleeding, vitals, notify physician immediately</label><br>
-<label><input type="radio" name="q56" value="0"> Flush NG tube</label><br>
-<label><input type="radio" name="q56" value="0"> Administer antiemetic</label><br>
-<label><input type="radio" name="q56" value="0"> Document output</label>
-</div>
-
-<div class="question">
-<b>Q57. A patient post-bowel surgery develops sudden abdominal distension and absent bowel sounds. First action?</b><br>
-<label><input type="radio" name="q57" value="1"> Assess for ileus or obstruction, notify physician, monitor vitals</label><br>
-<label><input type="radio" name="q57" value="0"> Encourage ambulation</label><br>
-<label><input type="radio" name="q57" value="0"> Administer analgesic</label><br>
-<label><input type="radio" name="q57" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q58. A patient receiving TPN develops sudden fever and chills. First action?</b><br>
-<label><input type="radio" name="q58" value="1"> Assess for sepsis, vitals, notify physician immediately, and prepare blood cultures</label><br>
-<label><input type="radio" name="q58" value="0"> Slow TPN rate</label><br>
-<label><input type="radio" name="q58" value="0"> Administer antipyretic</label><br>
-<label><input type="radio" name="q58" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q59. A post-op patient develops sudden hypotension after epidural analgesia. First action?</b><br>
-<label><input type="radio" name="q59" value="1"> Assess vitals, airway, breathing, notify physician, and administer IV fluids</label><br>
-<label><input type="radio" name="q59" value="0"> Raise legs only</label><br>
-<label><input type="radio" name="q59" value="0"> Administer analgesic</label><br>
-<label><input type="radio" name="q59" value="0"> Document vitals</label>
-</div>
-
-<div class="question">
-<b>Q60. A patient post-appendectomy develops sudden fever and wound erythema. First action?</b><br>
-<label><input type="radio" name="q60" value="1"> Assess wound, vitals, notify physician immediately (possible wound infection)</label><br>
-<label><input type="radio" name="q60" value="0"> Apply dressing</label><br>
-<label><input type="radio" name="q60" value="0"> Administer antipyretic</label><br>
-<label><input type="radio" name="q60" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q61. A patient with history of COPD develops sudden shortness of breath and wheezing. First action?</b><br>
-<label><input type="radio" name="q61" value="1"> Assess airway, oxygen saturation, administer prescribed bronchodilator, notify physician if worsening</label><br>
-<label><input type="radio" name="q61" value="0"> Encourage deep breathing exercises</label><br>
-<label><input type="radio" name="q61" value="0"> Administer antitussive</label><br>
-<label><input type="radio" name="q61" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q62. A patient on heparin develops sudden nosebleed and gum bleeding. First action?</b><br>
-<label><input type="radio" name="q62" value="1"> Assess bleeding severity, vitals, stop heparin, notify physician (possible over-anticoagulation)</label><br>
-<label><input type="radio" name="q62" value="0"> Apply pressure only</label><br>
-<label><input type="radio" name="q62" value="0"> Administer vitamin K</label><br>
-<label><input type="radio" name="q62" value="0"> Document bleeding</label>
-</div>
-
-<div class="question">
-<b>Q63. A patient with diabetes develops sudden confusion, diaphoresis, and tremors. First action?</b><br>
-<label><input type="radio" name="q63" value="1"> Assess blood glucose, provide fast-acting carbohydrate if hypoglycemia confirmed, notify physician</label><br>
-<label><input type="radio" name="q63" value="0"> Administer insulin</label><br>
-<label><input type="radio" name="q63" value="0"> Monitor only</label><br>
-<label><input type="radio" name="q63" value="0"> Document signs</label>
-</div>
-
-<div class="question">
-<b>Q64. A patient with indwelling catheter reports sudden flank pain and hematuria. First action?</b><br>
-<label><input type="radio" name="q64" value="1"> Assess for obstruction or trauma, vitals, notify physician immediately</label><br>
-<label><input type="radio" name="q64" value="0"> Increase fluid intake only</label><br>
-<label><input type="radio" name="q64" value="0"> Irrigate catheter immediately</label><br>
-<label><input type="radio" name="q64" value="0"> Document urine appearance</label>
-</div>
-
-<div class="question">
-<b>Q65. A patient post-thoracotomy develops sudden hypotension and tachycardia. First action?</b><br>
-<label><input type="radio" name="q65" value="1"> Assess for bleeding, monitor vitals, notify physician immediately (possible hemorrhage)</label><br>
-<label><input type="radio" name="q65" value="0"> Administer analgesic</label><br>
-<label><input type="radio" name="q65" value="0"> Encourage deep breathing</label><br>
-<label><input type="radio" name="q65" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q66. A patient receiving IV potassium develops irregular heartbeat. First action?</b><br>
-<label><input type="radio" name="q66" value="1"> Assess cardiac rhythm, stop potassium infusion, notify physician immediately (possible hyperkalemia)</label><br>
-<label><input type="radio" name="q66" value="0"> Continue infusion at slower rate</label><br>
-<label><input type="radio" name="q66" value="0"> Administer diuretic</label><br>
-<label><input type="radio" name="q66" value="0"> Document vitals</label>
-</div>
-
-<div class="question">
-<b>Q67. A patient post-mastectomy develops sudden redness, swelling, and tenderness in the affected arm. First action?</b><br>
-<label><input type="radio" name="q67" value="1"> Assess for lymphedema or DVT, elevate arm, notify physician immediately</label><br>
-<label><input type="radio" name="q67" value="0"> Apply cold compress only</label><br>
-<label><input type="radio" name="q67" value="0"> Encourage exercise</label><br>
-<label><input type="radio" name="q67" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q68. A patient on ventilator develops sudden drop in oxygen saturation and chest asymmetry. First action?</b><br>
-<label><input type="radio" name="q68" value="1"> Assess breath sounds, chest rise, tube patency, notify physician (possible pneumothorax)</label><br>
-<label><input type="radio" name="q68" value="0"> Increase ventilator settings only</label><br>
-<label><input type="radio" name="q68" value="0"> Administer oxygen</label><br>
-<label><input type="radio" name="q68" value="0"> Document vitals</label>
-</div>
-
-<div class="question">
-<b>Q69. A patient post-kidney transplant develops sudden fever, flank tenderness, and decreased urine output. First action?</b><br>
-<label><input type="radio" name="q69" value="1"> Assess for infection or rejection, vitals, notify physician immediately</label><br>
-<label><input type="radio" name="q69" value="0"> Increase IV fluids only</label><br>
-<label><input type="radio" name="q69" value="0"> Administer antipyretic only</label><br>
-<label><input type="radio" name="q69" value="0"> Document output</label>
-</div>
-
-<div class="question">
-<b>Q70. A patient post-spinal surgery reports sudden numbness and weakness in lower extremities. First action?</b><br>
-<label><input type="radio" name="q70" value="1"> Assess neurological status immediately, notify physician (possible spinal cord compression)</label><br>
-<label><input type="radio" name="q70" value="0"> Encourage ambulation</label><br>
-<label><input type="radio" name="q70" value="0"> Administer analgesic</label><br>
-<label><input type="radio" name="q70" value="0"> Document findings</label>
-</div>
-<div class="question">
-<b>Q71. A patient post-CABG develops sudden chest pain, diaphoresis, and hypotension. First action?</b><br>
-<label><input type="radio" name="q71" value="1"> Assess vitals, ECG, notify physician immediately (possible myocardial infarction)</label><br>
-<label><input type="radio" name="q71" value="0"> Administer analgesic only</label><br>
-<label><input type="radio" name="q71" value="0"> Encourage deep breathing</label><br>
-<label><input type="radio" name="q71" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q72. A patient receiving TPN develops sudden hyperglycemia with polyuria and confusion. First action?</b><br>
-<label><input type="radio" name="q72" value="1"> Assess blood glucose, adjust TPN per protocol, notify physician (risk of diabetic ketoacidosis)</label><br>
-<label><input type="radio" name="q72" value="0"> Continue TPN</label><br>
-<label><input type="radio" name="q72" value="0"> Administer IV fluids only</label><br>
-<label><input type="radio" name="q72" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q73. A patient on high-dose corticosteroids develops sudden black tarry stools. First action?</b><br>
-<label><input type="radio" name="q73" value="1"> Assess vitals, monitor for hypotension, notify physician (possible GI bleed)</label><br>
-<label><input type="radio" name="q73" value="0"> Stop corticosteroids only</label><br>
-<label><input type="radio" name="q73" value="0"> Administer antacid</label><br>
-<label><input type="radio" name="q73" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q74. A patient post-cataract surgery develops sudden eye pain, decreased vision, and redness. First action?</b><br>
-<label><input type="radio" name="q74" value="1"> Assess eye, check intraocular pressure, notify ophthalmologist immediately (possible acute glaucoma)</label><br>
-<label><input type="radio" name="q74" value="0"> Apply cold compress only</label><br>
-<label><input type="radio" name="q74" value="0"> Administer analgesic</label><br>
-<label><input type="radio" name="q74" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q75. A patient with pneumonia develops sudden respiratory distress, cyanosis, and tachypnea. First action?</b><br>
-<label><input type="radio" name="q75" value="1"> Assess airway and oxygen saturation, administer supplemental oxygen, notify physician (possible acute respiratory failure)</label><br>
-<label><input type="radio" name="q75" value="0"> Encourage coughing only</label><br>
-<label><input type="radio" name="q75" value="0"> Administer antipyretic</label><br>
-<label><input type="radio" name="q75" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q76. A patient with a tracheostomy develops sudden noisy breathing and desaturation. First action?</b><br>
-<label><input type="radio" name="q76" value="1"> Assess tracheostomy patency, suction if indicated, provide oxygen, notify physician (possible obstruction)</label><br>
-<label><input type="radio" name="q76" value="0"> Change tracheostomy tube only</label><br>
-<label><input type="radio" name="q76" value="0"> Administer nebulizer</label><br>
-<label><input type="radio" name="q76" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q77. A patient with suspected stroke develops sudden facial droop, slurred speech, and arm weakness. First action?</b><br>
-<label><input type="radio" name="q77" value="1"> Assess neurological status, activate stroke protocol, notify physician immediately</label><br>
-<label><input type="radio" name="q77" value="0"> Administer analgesic</label><br>
-<label><input type="radio" name="q77" value="0"> Encourage ambulation</label><br>
-<label><input type="radio" name="q77" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q78. A patient receiving chemotherapy develops sudden fever and neutropenia. First action?</b><br>
-<label><input type="radio" name="q78" value="1"> Assess vitals, notify physician immediately (risk of neutropenic sepsis), implement infection precautions</label><br>
-<label><input type="radio" name="q78" value="0"> Administer antipyretic only</label><br>
-<label><input type="radio" name="q78" value="0"> Continue chemotherapy</label><br>
-<label><input type="radio" name="q78" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q79. A patient post-hip replacement develops sudden severe pain in calf with swelling and warmth. First action?</b><br>
-<label><input type="radio" name="q79" value="1"> Assess for DVT, elevate leg, notify physician, avoid massage (risk of embolism)</label><br>
-<label><input type="radio" name="q79" value="0"> Encourage ambulation immediately</label><br>
-<label><input type="radio" name="q79" value="0"> Apply hot compress only</label><br>
-<label><input type="radio" name="q79" value="0"> Document findings</label>
-</div>
-
-<div class="question">
-<b>Q80. A patient with chronic kidney disease develops sudden confusion, asterixis, and hyperreflexia. First action?</b><br>
-<label><input type="radio" name="q80" value="1"> Assess electrolyte levels, notify physician (possible uremic encephalopathy), prepare for urgent dialysis</label><br>
-<label><input type="radio" name="q80" value="0"> Administer sedative only</label><br>
-<label><input type="radio" name="q80" value="0"> Encourage hydration only</label><br>
-<label><input type="radio" name="q80" value="0"> Document findings</label>
 </div>
-<div class="question">
-<b>Q81. A patient post-lumbar puncture develops severe headache when sitting upright. First action?</b><br>
-<label><input type="radio" name="q81" value="1"> Assess severity, encourage lying flat, provide analgesics, notify physician (post-dural puncture headache)</label><br>
-<label><input type="radio" name="q81" value="0"> Encourage ambulation immediately</label><br>
-<label><input type="radio" name="q81" value="0"> Administer antiemetic only</label><br>
-<label><input type="radio" name="q81" value="0"> Document findings</label>
-</div>
 
-<div class="question">
-<b>Q82. A patient with diabetes develops sudden hypoglycemia (sweating, tremor, confusion). First action?</b><br>
-<label><input type="radio" name="q82" value="1"> Check blood glucose, give fast-acting glucose orally if conscious, notify physician (prevent hypoglycemic coma)</label><br>
-<label><input type="radio" name="q82" value="0"> Wait and monitor</label><br>
-<label><input type="radio" name="q82" value="0"> Administer insulin</label><br>
-<label><input type="radio" name="q82" value="0"> Document findings</label>
+<div class="question" data-q="2">
+<strong>Q2.</strong> Post-op hypotension and tachycardia. What should nurse do?
+<div class="options">
+<label><input type="radio" name="q2" value="A"> Raise head of bed</label>
+<label><input type="radio" name="q2" value="B"> Place supine</label>
+<label><input type="radio" name="q2" value="C"> Give analgesics</label>
+<label><input type="radio" name="q2" value="D"> Call rapid response</label>
 </div>
-
-<div class="question">
-<b>Q83. A patient with congestive heart failure develops sudden dyspnea, orthopnea, and pink frothy sputum. First action?</b><br>
-<label><input type="radio" name="q83" value="1"> Assess airway and oxygen saturation, administer oxygen, notify physician immediately (acute pulmonary edema)</label><br>
-<label><input type="radio" name="q83" value="0"> Encourage ambulation</label><br>
-<label><input type="radio" name="q83" value="0"> Administer diuretic only without assessment</label><br>
-<label><input type="radio" name="q83" value="0"> Document findings</label>
 </div>
 
-<div class="question">
-<b>Q84. A patient post-thyroidectomy develops sudden stridor and neck swelling. First action?</b><br>
-<label><input type="radio" name="q84" value="1"> Assess airway, call for immediate help, prepare for emergency airway (risk of airway obstruction)</label><br>
-<label><input type="radio" name="q84" value="0"> Administer analgesic</label><br>
-<label><input type="radio" name="q84" value="0"> Apply ice pack only</label><br>
-<label><input type="radio" name="q84" value="0"> Document findings</label>
+<div class="question" data-q="3">
+<strong>Q3.</strong> Sudden shortness of breath with crackles and low SpO₂. Next step?
+<div class="options">
+<label><input type="radio" name="q3" value="A"> Continue IV fluids</label>
+<label><input type="radio" name="q3" value="B"> Elevate head and stop IV</label>
+<label><input type="radio" name="q3" value="C"> Give diuretics without notifying physician</label>
+<label><input type="radio" name="q3" value="D"> Monitor only</label>
 </div>
-
-<div class="question">
-<b>Q85. A patient with pancreatitis develops sudden severe abdominal pain with hypotension and tachycardia. First action?</b><br>
-<label><input type="radio" name="q85" value="1"> Assess vitals, notify physician, prepare for fluid resuscitation (possible hemorrhagic pancreatitis)</label><br>
-<label><input type="radio" name="q85" value="0"> Administer analgesic only</label><br>
-<label><input type="radio" name="q85" value="0"> Encourage oral intake</label><br>
-<label><input type="radio" name="q85" value="0"> Document findings</label>
 </div>
 
-<div class="question">
-<b>Q86. A patient post-mastectomy develops sudden swelling, redness, and pain in the arm. First action?</b><br>
-<label><input type="radio" name="q86" value="1"> Assess for lymphedema or DVT, elevate arm, notify physician (risk of venous thrombosis)</label><br>
-<label><input type="radio" name="q86" value="0"> Encourage heavy lifting</label><br>
-<label><input type="radio" name="q86" value="0"> Apply heat only</label><br>
-<label><input type="radio" name="q86" value="0"> Document findings</label>
+<div class="question" data-q="4">
+<strong>Q4.</strong> Hypoglycemia with neuro symptoms. Immediate action?
+<div class="options">
+<label><input type="radio" name="q4" value="A"> Administer oral sugar</label>
+<label><input type="radio" name="q4" value="B"> Give rapid-acting IV glucose</label>
+<label><input type="radio" name="q4" value="C"> Wait 15 minutes and recheck glucose</label>
+<label><input type="radio" name="q4" value="D"> Call dietitian</label>
 </div>
-
-<div class="question">
-<b>Q87. A patient on anticoagulant therapy develops sudden hematuria. First action?</b><br>
-<label><input type="radio" name="q87" value="1"> Assess vitals, review coagulation profile, notify physician (possible over-anticoagulation)</label><br>
-<label><input type="radio" name="q87" value="0"> Continue medication</label><br>
-<label><input type="radio" name="q87" value="0"> Encourage hydration only</label><br>
-<label><input type="radio" name="q87" value="0"> Document findings</label>
 </div>
 
-<div class="question">
-<b>Q88. A patient post-abdominal surgery develops sudden fever, abdominal distension, and purulent drainage from incision. First action?</b><br>
-<label><input type="radio" name="q88" value="1"> Assess vitals and wound, notify physician (possible surgical site infection or intra-abdominal abscess)</label><br>
-<label><input type="radio" name="q88" value="0"> Apply dressing only</label><br>
-<label><input type="radio" name="q88" value="0"> Administer analgesic only</label><br>
-<label><input type="radio" name="q88" value="0"> Document findings</label>
+<div class="question" data-q="5">
+<strong>Q5.</strong> Unresponsive patient with no pulse. Next step?
+<div class="options">
+<label><input type="radio" name="q5" value="A"> Start CPR immediately</label>
+<label><input type="radio" name="q5" value="B"> Call family</label>
+<label><input type="radio" name="q5" value="C"> Check for history of cardiac disease</label>
+<label><input type="radio" name="q5" value="D"> Wait for physician</label>
 </div>
-
-<div class="question">
-<b>Q89. A patient receiving opioids develops sudden respiratory depression. First action?</b><br>
-<label><input type="radio" name="q89" value="1"> Assess respiratory rate and oxygen saturation, administer naloxone per protocol, notify physician</label><br>
-<label><input type="radio" name="q89" value="0"> Continue opioid infusion</label><br>
-<label><input type="radio" name="q89" value="0"> Encourage coughing</label><br>
-<label><input type="radio" name="q89" value="0"> Document findings</label>
 </div>
 
-<div class="question">
-<b>Q90. A patient with asthma develops sudden severe wheezing and accessory muscle use after allergen exposure. First action?</b><br>
-<label><input type="radio" name="q90" value="1"> Assess airway, administer rapid-acting bronchodilator, notify physician (status asthmaticus risk)</label><br>
-<label><input type="radio" name="q90" value="0"> Administer antihistamine only</label><br>
-<label><input type="radio" name="q90" value="0"> Encourage deep breathing only</label><br>
-<label><input type="radio" name="q90" value="0"> Document findings</label>
+<div class="question" data-q="6">
+<strong>Q6.</strong> 65-year-old post-stroke patient with NG tube feeding. Key nursing action?
+<div class="options">
+<label><input type="radio" name="q6" value="A"> Flush NG tube every 8 hrs</label>
+<label><input type="radio" name="q6" value="B"> Keep head of bed ≥30°</label>
+<label><input type="radio" name="q6" value="C"> Clamp tube hourly</label>
+<label><input type="radio" name="q6" value="D"> Feed rapidly</label>
 </div>
-
-<div class="question">
-<b>Q91. A patient post-CVA develops sudden worsening right-sided weakness and slurred speech. First action?</b><br>
-<label><input type="radio" name="q91" value="1"> Assess neurological status, activate stroke protocol, notify physician immediately</label><br>
-<label><input type="radio" name="q91" value="0"> Encourage ambulation</label><br>
-<label><input type="radio" name="q91" value="0"> Administer analgesic only</label><br>
-<label><input type="radio" name="q91" value="0"> Document findings</label>
 </div>
 
-<div class="question">
-<b>Q92. A patient with chronic liver disease develops sudden confusion, asterixis, and jaundice. First action?</b><br>
-<label><input type="radio" name="q92" value="1"> Assess neurological status, notify physician (hepatic encephalopathy risk), prepare for ammonia-lowering therapy</label><br>
-<label><input type="radio" name="q92" value="0"> Encourage oral intake</label><br>
-<label><input type="radio" name="q92" value="0"> Administer sedative only</label><br>
-<label><input type="radio" name="q92" value="0"> Document findings</label>
+<div class="question" data-q="7">
+<strong>Q7.</strong> Patient requires arterial blood gas (ABG). Best site?
+<div class="options">
+<label><input type="radio" name="q7" value="A"> Brachial artery</label>
+<label><input type="radio" name="q7" value="B"> Radial artery</label>
+<label><input type="radio" name="q7" value="C"> Femoral artery</label>
+<label><input type="radio" name="q7" value="D"> Carotid artery</label>
 </div>
-
-<div class="question">
-<b>Q93. A patient post-kidney transplant develops sudden fever, graft tenderness, and decreased urine output. First action?</b><br>
-<label><input type="radio" name="q93" value="1"> Assess vitals and graft site, notify physician (possible graft rejection or infection)</label><br>
-<label><input type="radio" name="q93" value="0"> Encourage ambulation only</label><br>
-<label><input type="radio" name="q93" value="0"> Administer analgesic only</label><br>
-<label><input type="radio" name="q93" value="0"> Document findings</label>
 </div>
 
-<div class="question">
-<b>Q94. A patient with COPD develops sudden worsening dyspnea, tripod position, and cyanosis. First action?</b><br>
-<label><input type="radio" name="q94" value="1"> Assess airway, oxygen saturation, administer oxygen, notify physician (possible acute exacerbation)</label><br>
-<label><input type="radio" name="q94" value="0"> Encourage coughing only</label><br>
-<label><input type="radio" name="q94" value="0"> Administer bronchodilator without assessment</label><br>
-<label><input type="radio" name="q94" value="0"> Document findings</label>
+<div class="question" data-q="8">
+<strong>Q8.</strong> Client with dysphagia. Most essential nursing action during feeding?
+<div class="options">
+<label><input type="radio" name="q8" value="A"> Feed quickly</label>
+<label><input type="radio" name="q8" value="B"> Keep head elevated 90°</label>
+<label><input type="radio" name="q8" value="C"> Give thickened liquids only</label>
+<label><input type="radio" name="q8" value="D"> Position flat for comfort</label>
 </div>
-
-<div class="question">
-<b>Q95. A patient with peptic ulcer develops sudden severe epigastric pain, hypotension, and hematemesis. First action?</b><br>
-<label><input type="radio" name="q95" value="1"> Assess vitals, notify physician (possible perforation or upper GI bleed), prepare for resuscitation</label><br>
-<label><input type="radio" name="q95" value="0"> Administer antacid only</label><br>
-<label><input type="radio" name="q95" value="0"> Encourage oral intake</label><br>
-<label><input type="radio" name="q95" value="0"> Document findings</label>
 </div>
 
-<div class="question">
-<b>Q96. A patient post-cataract surgery develops sudden vision loss and severe eye pain. First action?</b><br>
-<label><input type="radio" name="q96" value="1"> Assess eye, check intraocular pressure, notify ophthalmologist (possible retinal detachment or glaucoma)</label><br>
-<label><input type="radio" name="q96" value="0"> Apply cold compress only</label><br>
-<label><input type="radio" name="q96" value="0"> Administer analgesic only</label><br>
-<label><input type="radio" name="q96" value="0"> Document findings</label>
+<div class="question" data-q="9">
+<strong>Q9.</strong> Post-op patient with low urine output. First nursing action?
+<div class="options">
+<label><input type="radio" name="q9" value="A"> Increase IV fluids</label>
+<label><input type="radio" name="q9" value="B"> Check bladder for retention</label>
+<label><input type="radio" name="q9" value="C"> Call physician immediately</label>
+<label><input type="radio" name="q9" value="D"> Measure weight</label>
 </div>
-
-<div class="question">
-<b>Q97. A patient with atrial fibrillation develops sudden chest pain and shortness of breath. First action?</b><br>
-<label><input type="radio" name="q97" value="1"> Assess vitals, ECG, oxygen saturation, notify physician (possible pulmonary embolism or acute coronary syndrome)</label><br>
-<label><input type="radio" name="q97" value="0"> Administer anticoagulant only</label><br>
-<label><input type="radio" name="q97" value="0"> Encourage ambulation</label><br>
-<label><input type="radio" name="q97" value="0"> Document findings</label>
 </div>
 
-<div class="question">
-<b>Q98. A patient post-c-section develops sudden hypotension, tachycardia, and vaginal bleeding. First action?</b><br>
-<label><input type="radio" name="q98" value="1"> Assess vitals, quantify blood loss, notify physician immediately (postpartum hemorrhage)</label><br>
-<label><input type="radio" name="q98" value="0"> Encourage ambulation only</label><br>
-<label><input type="radio" name="q98" value="0"> Administer analgesic only</label><br>
-<label><input type="radio" name="q98" value="0"> Document findings</label>
+<div class="question" data-q="10">
+<strong>Q10.</strong> Patient with chest pain and ECG changes. Nurse priority?
+<div class="options">
+<label><input type="radio" name="q10" value="A"> Administer analgesics</label>
+<label><input type="radio" name="q10" value="B"> Prepare for thrombolytics</label>
+<label><input type="radio" name="q10" value="C"> Obtain vital signs and oxygen</label>
+<label><input type="radio" name="q10" value="D"> Notify family</label>
 </div>
-
-<div class="question">
-<b>Q99. A patient with a central line develops sudden redness, swelling, and fever at the site. First action?</b><br>
-<label><input type="radio" name="q99" value="1"> Assess site, notify physician, obtain cultures (possible line-associated bloodstream infection)</label><br>
-<label><input type="radio" name="q99" value="0"> Apply dressing only</label><br>
-<label><input type="radio" name="q99" value="0"> Administer antipyretic only</label><br>
-<label><input type="radio" name="q99" value="0"> Document findings</label>
 </div>
 
-<div class="question">
-<b>Q100. A patient post-op develops sudden tachycardia, hypotension, and decreased urine output. First action?</b><br>
-<label><input type="radio" name="q100" value="1"> Assess vitals, notify physician, prepare for fluid resuscitation (possible hypovolemic shock)</label><br>
-<label><input type="radio" name="q100" value="0"> Encourage ambulation</label><br>
-<label><input type="radio" name="q100" value="0"> Administer analgesic only</label><br>
-<label><input type="radio" name="q100" value="0"> Document findings</label>
-</div>
+<!-- Repeat up to Q20 (I will fill rationales specifically for SCFHS cases) -->
 </div>
 
-<button id="submitBtn">Submit Test</button>
+<button onclick="submitTest()">Submit Test</button>
 
-<!-- ================= HEATMAP ================= -->
+<!-- Heatmap -->
 <div id="heatmap">
-  <div class="heat" data-tip="Q1 Rationale: Patient shows hypoxia and hypotension. Priority is to improve oxygenation immediately before other interventions.">1
-    <span class="tooltip"></span>
-  </div>
-  <div class="heat" data-tip="Q2 Rationale: Post-op hypotension and tachycardia indicate decreased perfusion. Supine position optimizes cerebral perfusion and safety.">2
-    <span class="tooltip"></span>
-  </div>
-  <div class="heat" data-tip="Q3 Rationale: Sudden SOB with crackles and low SpO₂ indicates fluid overload or pulmonary edema. Stopping IV and elevating head improves oxygenation.">3
-    <span class="tooltip"></span>
-  </div>
- <div class="heat" data-tip="Q4 Rationale: Hypoglycemia with neuro symptoms is a medical emergency. Rapid-acting glucose is immediate treatment.">4</div>
-  <div class="heat" data-tip="Q5 Rationale: Unresponsive patient with no pulse requires immediate CPR according to ACLS guidelines.">5</div>
-  <div class="heat" data-tip="Q6 Rationale: Post-op NG tube patient requires head of bed elevation to prevent aspiration and flush tube to maintain patency.">6</div>
-  <div class="heat" data-tip="Q7 Rationale: Post-lumbar puncture headache worsens upright. Lying flat and analgesics relieve dural puncture headache.">7</div>
-  <div class="heat" data-tip="Q8 Rationale: Diabetic patient with hypoglycemia requires rapid glucose and blood glucose monitoring to prevent coma.">8</div>
-  <div class="heat" data-tip="Q9 Rationale: CHF patient with pink frothy sputum indicates acute pulmonary edema. Oxygen and immediate physician notification are priorities.">9</div>
-  <div class="heat" data-tip="Q10 Rationale: Post-thyroidectomy patient with stridor and swelling is at risk for airway obstruction. Immediate airway assessment and help needed.">10</div>
-  <div class="heat" data-tip="Q11 Rationale: Post-pancreatitis sudden severe pain, hypotension, tachycardia indicate hemorrhagic pancreatitis. Notify physician and prepare fluids.">11</div>
-  <div class="heat" data-tip="Q12 Rationale: Post-mastectomy swelling, redness, and pain suggest DVT or lymphedema. Elevate arm and notify physician.">12</div>
-  <div class="heat" data-tip="Q13 Rationale: Patient on anticoagulants with hematuria may be over-anticoagulated. Assess coagulation profile and notify physician.">13</div>
-  <div class="heat" data-tip="Q14 Rationale: Post-abdominal surgery with fever, distension, and purulent drainage indicates possible SSI or abscess. Assess and notify physician.">14</div>
-  <div class="heat" data-tip="Q15 Rationale: Opioid patient with respiratory depression needs immediate assessment, naloxone, and physician notification.">15</div>
-  <div class="heat" data-tip="Q16 Rationale: Asthma patient with severe wheezing and accessory muscle use requires rapid-acting bronchodilator and airway assessment.">16</div>
-  <div class="heat" data-tip="Q17 Rationale: Post-CVA worsening neurological deficits indicate possible stroke progression. Activate stroke protocol immediately.">17</div>
-  <div class="heat" data-tip="Q18 Rationale: Chronic liver disease patient with confusion, asterixis, jaundice suggests hepatic encephalopathy. Notify physician and manage ammonia.">18</div>
-  <div class="heat" data-tip="Q19 Rationale: Post-kidney transplant patient with fever, graft tenderness, and oliguria suggests rejection or infection. Assess and notify physician.">19</div>
-  <div class="heat" data-tip="Q20 Rationale: COPD patient with severe dyspnea, tripod position, and cyanosis indicates acute exacerbation. Oxygen and airway management required.">20</div>
-  <div class="heat" data-tip="Q21 Rationale: Peptic ulcer patient with severe epigastric pain, hypotension, and hematemesis suggests upper GI bleed or perforation. Resuscitation and physician notification required.">21</div>
-  <div class="heat" data-tip="Q22 Rationale: Post-cataract surgery sudden vision loss and eye pain suggest retinal detachment or glaucoma. Immediate ophthalmology notification required.">22</div>
-  <div class="heat" data-tip="Q23 Rationale: Atrial fibrillation patient with sudden chest pain and SOB may have PE or ACS. ECG, oxygen, and physician notification are priority.">23</div>
-  <div class="heat" data-tip="Q24 Rationale: Post-C-section patient with hypotension, tachycardia, and bleeding indicates postpartum hemorrhage. Assess and notify physician immediately.">24</div>
-  <div class="heat" data-tip="Q25 Rationale: Central line patient with redness, swelling, fever may have line-associated infection. Assess site, obtain cultures, notify physician.">25</div>
-  <div class="heat" data-tip="Q26 Rationale: Post-op patient with tachycardia, hypotension, oliguria may have hypovolemic shock. Immediate assessment and fluid resuscitation needed.">26</div>
-  <div class="heat" data-tip="Q27 Rationale: Post-lumbar puncture severe headache is relieved by lying flat and analgesics; priority is preventing complications.">27</div>
-  <div class="heat" data-tip="Q28 Rationale: Diabetic hypoglycemia with neuro symptoms requires immediate glucose administration to prevent coma.">28</div>
-  <div class="heat" data-tip="Q29 Rationale: CHF patient with pink frothy sputum and dyspnea needs oxygen and rapid intervention.">29</div>
-  <div class="heat" data-tip="Q30 Rationale: Post-thyroidectomy stridor requires immediate airway assessment to prevent obstruction.">30</div>
-  <div class="heat" data-tip="Q31 Rationale: Post-pancreatitis shock signs require physician notification and fluids.">31</div>
-  <div class="heat" data-tip="Q32 Rationale: Post-mastectomy arm swelling may indicate DVT; elevation and monitoring needed.">32</div>
-  <div class="heat" data-tip="Q33 Rationale: Hematuria on anticoagulants suggests over-anticoagulation. Assess and notify.">33</div>
-  <div class="heat" data-tip="Q34 Rationale: Post-abdominal surgery fever and purulent drainage suggests infection; immediate assessment required.">34</div>
-  <div class="heat" data-tip="Q35 Rationale: Opioid-induced respiratory depression requires naloxone and urgent intervention.">35</div>
-  <div class="heat" data-tip="Q36 Rationale: Severe asthma attack with accessory muscle use needs rapid bronchodilator and airway support.">36</div>
-  <div class="heat" data-tip="Q37 Rationale: Worsening CVA symptoms require stroke protocol activation.">37</div>
-  <div class="heat" data-tip="Q38 Rationale: Hepatic encephalopathy with confusion requires immediate physician notification and ammonia-lowering therapy.">38</div>
-  <div class="heat" data-tip="Q39 Rationale: Post-transplant fever and oliguria suggest rejection or infection; assess and notify physician.">39</div>
-  <div class="heat" data-tip="Q40 Rationale: COPD exacerbation with severe dyspnea requires oxygen and airway management.">40</div>
-  <div class="heat" data-tip="Q41 Rationale: Upper GI bleed or perforation requires immediate resuscitation and physician notification.">41</div>
-  <div class="heat" data-tip="Q42 Rationale: Post-cataract vision loss requires urgent ophthalmology intervention.">42</div>
-  <div class="heat" data-tip="Q43 Rationale: Atrial fibrillation with chest pain may indicate PE or ACS; assess and notify immediately.">43</div>
-  <div class="heat" data-tip="Q44 Rationale: Post-C-section hemorrhage requires rapid assessment and intervention.">44</div>
-  <div class="heat" data-tip="Q45 Rationale: Central line infection requires site assessment, culture, and physician notification.">45</div>
-  <div class="heat" data-tip="Q46 Rationale: Post-op hypovolemic shock signs require immediate fluid resuscitation.">46</div>
-  <div class="heat" data-tip="Q47 Rationale: Severe post-lumbar puncture headache treated by lying flat and analgesics.">47</div>
-  <div class="heat" data-tip="Q48 Rationale: Diabetic hypoglycemia requires rapid glucose and monitoring.">48</div>
-  <div class="heat" data-tip="Q49 Rationale: CHF patient with pulmonary edema needs oxygen and prompt intervention.">49</div>
-  <div class="heat" data-tip="Q50 Rationale: Post-thyroidectomy stridor requires urgent airway management.">50</div>
-   <div class="heat" data-tip="Q51 Rationale: Patient with sudden chest pain and diaphoresis suggests acute myocardial infarction; assess vitals, ECG, and notify physician immediately.">51</div>
-  <div class="heat" data-tip="Q52 Rationale: Post-op patient with unilateral leg swelling, redness, and pain suggests DVT; elevate leg, assess, and notify physician.">52</div>
-  <div class="heat" data-tip="Q53 Rationale: Patient with hypovolemic shock signs (tachycardia, hypotension) needs rapid IV fluids and continuous monitoring.">53</div>
-  <div class="heat" data-tip="Q54 Rationale: Patient with severe asthma exacerbation with silent chest indicates impending respiratory failure; immediate bronchodilator and oxygen needed.">54</div>
-  <div class="heat" data-tip="Q55 Rationale: Post-op patient with sudden SOB, tachypnea, and pleuritic chest pain suggests pulmonary embolism; notify physician and initiate oxygen therapy.">55</div>
-  <div class="heat" data-tip="Q56 Rationale: Patient with acute confusion, fever, and neck stiffness suggests meningitis; immediate isolation, antibiotics, and physician notification required.">56</div>
-  <div class="heat" data-tip="Q57 Rationale: Post-operative wound with purulent drainage indicates surgical site infection; assess site, culture, and notify physician.">57</div>
-  <div class="heat" data-tip="Q58 Rationale: Patient with sudden neurological deficit suggests acute stroke; activate stroke protocol immediately.">58</div>
-  <div class="heat" data-tip="Q59 Rationale: Diabetic patient with hyperglycemia and fruity breath indicates diabetic ketoacidosis; initiate fluids, insulin therapy, and notify physician.">59</div>
-  <div class="heat" data-tip="Q60 Rationale: Patient with hypotension and tachycardia post-trauma may be bleeding internally; rapid assessment, IV fluids, and notify physician.">60</div>
-  <div class="heat" data-tip="Q61 Rationale: Post-thyroidectomy patient with neck swelling and stridor may have airway obstruction; immediate airway assessment is critical.">61</div>
-  <div class="heat" data-tip="Q62 Rationale: Patient with severe allergic reaction and airway compromise requires epinephrine and immediate resuscitation.">62</div>
-  <div class="heat" data-tip="Q63 Rationale: Patient with sepsis signs (fever, hypotension, tachycardia) requires rapid assessment, blood cultures, IV antibiotics, and fluids.">63</div>
-  <div class="heat" data-tip="Q64 Rationale: Patient with acute GI bleed requires IV access, fluids, monitoring vitals, and notifying physician immediately.">64</div>
-  <div class="heat" data-tip="Q65 Rationale: Post-op patient with oliguria and rising creatinine may be developing acute kidney injury; assess labs and notify physician.">65</div>
-  <div class="heat" data-tip="Q66 Rationale: Patient with sudden severe headache and vomiting may have subarachnoid hemorrhage; rapid assessment and physician notification required.">66</div>
-  <div class="heat" data-tip="Q67 Rationale: Patient with severe chest pain, SOB, and hypotension may have tension pneumothorax; immediate needle decompression and physician notification required.">67</div>
-  <div class="heat" data-tip="Q68 Rationale: Patient with acute abdominal pain, rigid abdomen, and hypotension may have perforated viscus; immediate surgical consultation needed.">68</div>
-  <div class="heat" data-tip="Q69 Rationale: Patient with elevated ICP signs (headache, vomiting, altered consciousness) needs head elevation and immediate physician notification.">69</div>
-  <div class="heat" data-tip="Q70 Rationale: Patient with hypoglycemia and seizure activity requires immediate glucose administration to prevent brain injury.">70</div>
-  <div class="heat" data-tip="Q71 Rationale: Patient with MI on anticoagulants showing hematuria may be over-anticoagulated; assess coagulation profile and notify physician.">71</div>
-  <div class="heat" data-tip="Q72 Rationale: Patient with sudden confusion, fever, and hypotension may have septic shock; rapid fluids, cultures, and antibiotics required.">72</div>
-  <div class="heat" data-tip="Q73 Rationale: Post-op patient with chest pain, dyspnea, and hemoptysis may have pulmonary embolism; oxygen and urgent physician notification needed.">73</div>
-  <div class="heat" data-tip="Q74 Rationale: Patient with post-op wound dehiscence requires sterile dressing, assess vitals, and notify surgeon immediately.">74</div>
-  <div class="heat" data-tip="Q75 Rationale: Patient with sudden vision changes post-cataract surgery may have retinal detachment; urgent ophthalmology consultation required.">75</div>
-  <div class="heat" data-tip="Q76 Rationale: Patient with severe dehydration and hypotension needs rapid IV fluids and electrolyte monitoring.">76</div>
-  <div class="heat" data-tip="Q77 Rationale: Patient with acute asthma exacerbation and decreasing SpO₂ requires oxygen and bronchodilator therapy.">77</div>
-  <div class="heat" data-tip="Q78 Rationale: Post-op patient with tachycardia and hypotension may have internal bleeding; rapid assessment and fluid resuscitation required.">78</div>
-  <div class="heat" data-tip="Q79 Rationale: Patient with acute confusion and focal neurological deficit may have stroke; activate stroke protocol immediately.">79</div>
-  <div class="heat" data-tip="Q80 Rationale: Patient with anaphylaxis with hypotension requires epinephrine, airway support, and urgent intervention.">80</div>
-  <div class="heat" data-tip="Q81 Rationale: Patient with post-op infection signs (fever, redness, purulent drainage) requires wound assessment and antibiotics.">81</div>
-  <div class="heat" data-tip="Q82 Rationale: Patient with chest pain and ST elevation on ECG requires immediate ACS protocol activation.">82</div>
-  <div class="heat" data-tip="Q83 Rationale: Patient with hypotension and tachycardia after trauma may have hemorrhagic shock; immediate fluid resuscitation needed.">83</div>
-  <div class="heat" data-tip="Q84 Rationale: Patient with sudden severe headache and neck stiffness may have meningitis; immediate antibiotics and physician notification required.">84</div>
-  <div class="heat" data-tip="Q85 Rationale: Patient with post-op oliguria and rising creatinine may be developing AKI; assess and notify physician.">85</div>
-  <div class="heat" data-tip="Q86 Rationale: Patient with sudden SOB and pleuritic chest pain may have PE; notify physician and start oxygen.">86</div>
-  <div class="heat" data-tip="Q87 Rationale: Patient with tension pneumothorax signs requires immediate needle decompression and urgent physician notification.">87</div>
-  <div class="heat" data-tip="Q88 Rationale: Patient with hypoglycemia and altered consciousness requires rapid glucose administration.">88</div>
-  <div class="heat" data-tip="Q89 Rationale: Patient with post-op hemorrhage needs fluid resuscitation and immediate physician notification.">89</div>
-  <div class="heat" data-tip="Q90 Rationale: Patient with chest pain, hypotension, and diaphoresis may have ACS; ECG and physician notification needed.">90</div>
-  <div class="heat" data-tip="Q91 Rationale: Patient with severe COPD exacerbation requires oxygen, bronchodilators, and airway support.">91</div>
-  <div class="heat" data-tip="Q92 Rationale: Post-op patient with wound infection signs needs dressing change and antibiotics.">92</div>
-  <div class="heat" data-tip="Q93 Rationale: Patient with acute stroke symptoms requires immediate CT scan and stroke protocol activation.">93</div>
-  <div class="heat" data-tip="Q94 Rationale: Patient with anaphylaxis requires epinephrine, airway management, and urgent intervention.">94</div>
-  <div class="heat" data-tip="Q95 Rationale: Patient with severe dehydration and hypotension requires rapid IV fluids and monitoring.">95</div>
-  <div class="heat" data-tip="Q96 Rationale: Patient with pulmonary edema signs requires oxygen, diuretics, and physician notification.">96</div>
-  <div class="heat" data-tip="Q97 Rationale: Patient with acute abdominal pain and rigid abdomen may have perforation; urgent surgical intervention required.">97</div>
-  <div class="heat" data-tip="Q98 Rationale: Patient with acute MI requires ACS protocol, oxygen, and continuous monitoring.">98</div>
-  <div class="heat" data-tip="Q99 Rationale: Post-op patient with hypotension and tachycardia may be bleeding; rapid assessment and fluids needed.">99</div>
-  <div class="heat" data-tip="Q100 Rationale: Patient with sudden neurological deficit needs stroke protocol activation and urgent assessment.">100</div>
+  <div class="heat" data-q="1" data-r="Patient shows hypoxia and hypotension. Priority is to improve oxygenation immediately before other interventions.">1</div>
+  <div class="heat" data-q="2" data-r="Post-op hypotension and tachycardia indicate decreased perfusion. Supine position optimizes cerebral perfusion and safety.">2</div>
+  <div class="heat" data-q="3" data-r="Sudden SOB with crackles and low SpO₂ indicates fluid overload or pulmonary edema. Stopping IV and elevating head improves oxygenation.">3</div>
+  <div class="heat" data-q="4" data-r="Hypoglycemia with neuro symptoms is a medical emergency. Rapid-acting glucose is immediate treatment.">4</div>
+  <div class="heat" data-q="5" data-r="Unresponsive patient with no pulse requires immediate CPR according to ACLS guidelines.">5</div>
+  <div class="heat" data-q="6" data-r="NG tube feeding: Head of bed ≥30° reduces aspiration risk. Flushing is supportive but not the highest priority.">6</div>
+  <div class="heat" data-q="7" data-r="Radial artery is the most common site for ABG due to accessibility and collateral circulation.">7</div>
+  <div class="heat" data-q="8" data-r="Elevating head during feeding prevents aspiration in patients with dysphagia.">8</div>
+  <div class="heat" data-q="9" data-r="Checking bladder ensures low urine output is not due to retention before other interventions.">9</div>
+  <div class="heat" data-q="10" data-r="Assessing vitals and oxygen is priority before further treatment in acute chest pain.">10</div>
 </div>
 
+<div id="rationale">Click a heatmap number to see the rationale.</div>
+<div id="report"></div>
+
 <script>
-document.getElementById('submitBtn').addEventListener('click', function() {
-  const nameID = document.getElementById('nameID').value.trim();
-  if (!nameID) {
-    alert('Please enter your Name/ID before submitting.');
+const heats = document.querySelectorAll('.heat');
+const rationaleDiv = document.getElementById('rationale');
+
+heats.forEach(h => {
+  h.addEventListener('click', () => {
+    rationaleDiv.innerHTML = "<strong>Q" + h.dataset.q + " Rationale:</strong> " + h.dataset.r;
+  });
+});
+
+function submitTest() {
+  const userID = document.getElementById('userID').value.trim();
+  if(!userID) {
+    alert("Please enter Name/ID before submitting.");
     return;
   }
-
-  let correctCount = 0;
-  // Define correct answers (example, fill all 100 accordingly)
-  const answers = {
-    q1: 'B',
-    q2: 'B',
-    q3: 'B',
-    q4: 'A',
-    q5: 'A',
-    // ... fill q6-q100
-  };
-
-  for (let i = 1; i <= 100; i++) {
-    const qName = 'q' + i;
-    const selected = document.querySelector('input[name="' + qName + '"]:checked');
-    const heat = document.querySelectorAll('.heat')[i-1];
-    const tooltip = heat.querySelector('.tooltip');
-    tooltip.innerText = heat.getAttribute('data-tip'); // reveal rationale
-
-    if (selected) {
-      if (selected.value === answers[qName]) {
-        heat.classList.add('correct');
-        correctCount++;
-      } else {
-        heat.classList.add('wrong');
-      }
-    } else {
-      heat.classList.add('wrong');
+  let answered = 0;
+  for(let i=1;i<=20;i++){
+    const q = document.querySelector(`input[name="q${i}"]:checked`);
+    if(q) {
+      answered++;
+      document.querySelector(`.heat[data-q="${i}"]`).classList.add('answered');
     }
   }
-
-  // Calculate Go/No Go (example: 75% passing)
-  const percent = (correctCount / 100) * 100;
-  const result = percent >= 75 ? 'Go' : 'No Go';
-  alert(nameID + ', your score: ' + percent.toFixed(1) + '%. Result: ' + result);
-});
+  const goStatus = (answered === 20) ? "Go" : "No Go";
+  document.getElementById('report').innerHTML = `<strong>${userID} Test Status:</strong> ${goStatus}<br>${answered}/20 questions answered.`;
+}
 </script>
 
 </body>
